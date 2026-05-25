@@ -13,7 +13,7 @@
       "main" = {
         open-on-output = "DP-4";
       };
-      "browser" = {
+      "steam" = {
         open-on-output = "DP-4";
       };
       "discord" = {
@@ -98,8 +98,8 @@
       # Navigation - Columns
       "super+Left".action = focus-column-left;
       "super+Right".action = focus-column-right;
-      "super+Alt+WheelScrollDown" = { action = focus-column-right; };
-      "super+Alt+WheelScrollUp" = { action = focus-column-left; };
+      "super+Shift+WheelScrollDown" = { action = focus-column-right; };
+      "super+Shift+WheelScrollUp" = { action = focus-column-left; };
 
       # Navigation - Workspaces
       "super+Down".action = focus-workspace-down;
@@ -108,14 +108,18 @@
       "super+WheelScrollUp" = { action = focus-workspace-up; cooldown-ms = 150; };
 
       # Move windows
-      "super+Shift+Left".action = move-column-left;
-      "super+Shift+Right".action = move-column-right;
-      "super+Shift+Down".action = move-column-to-workspace-down;
-      "super+Shift+Up".action = move-column-to-workspace-up;
+      "super+Alt+Left".action = move-column-left;
+      "super+Alt+Right".action = move-column-right;
+      "super+Alt+Down".action = move-column-to-workspace-down;
+      "super+Alt+Up".action = move-column-to-workspace-up;
+      # "super+Alt+1".action = move-column-to-workspace ;
+      # "super+Alt+2".action = move-column-to-workspace ;
+      # "super+Alt+3".action = move-column-to-workspace ;
+      # "super+Alt+4".action = move-column-to-workspace ;
 
       # Workspace switching
       "super+1".action = focus-workspace "main";
-      "super+2".action = focus-workspace "browser";
+      "super+2".action = focus-workspace "steam";
       "super+3".action = focus-workspace "discord";
       "super+4".action = focus-workspace "music";
     };

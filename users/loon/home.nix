@@ -34,7 +34,7 @@
     fish
     foot
     fuzzel
-    handbrake
+    #handbrake # Use flatpak due to nvenc not working on nixpkgs.
     git
     mako
     pkgs.atuin
@@ -50,6 +50,11 @@
   programs.starship.enable = true;
   programs.yazi.enable = true;
   programs.yazi.shellWrapperName = "yy";
+
+  home.activation.flatpakSetup = ''
+  ${pkgs.flatpak}/bin/flatpak install -y flathub com.spotify.Client
+  ${pkgs.flatpak}/bin/flatpak install -y flathub fr.handbrake.ghb
+'';
 
   programs.home-manager.enable = true;
 }

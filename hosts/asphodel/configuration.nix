@@ -5,24 +5,18 @@
     ./hardware-configuration.nix
   ];
   
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    supportedFilesystems = [ "nfs" ];
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "nfs" ];
 
-  networking = { 
-    hostName = "asphodel";
-    networkmanager.enable = true;
-  };
-
+  networking.hostName = "asphodel";
+  networking.networkmanager.enable = true;
+  
   time.timeZone = "America/Chicago";
 
-  i18n = { 
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
       LC_ADDRESS = "en_US.UTF-8";
       LC_IDENTIFICATION = "en_US.UTF-8";
       LC_MEASUREMENT = "en_US.UTF-8";
@@ -33,7 +27,6 @@
       LC_TELEPHONE = "en_US.UTF-8";
       LC_TIME = "en_US.UTF-8";
     };
-  };
 
   hardware = { 
     enableAllFirmware = true;
@@ -89,8 +82,8 @@
     flatpak.enable = true;
     sunshine = {
       enable = true;
-      autoStart = false; # Will need to start with `sunshine`
-      capSysAdmin = true; # Needed on Wayland
+      autoStart = false;   # Will need to start with `sunshine`
+      capSysAdmin = true;  # Needed on Wayland
       openFirewall = true;
     };
   };
@@ -108,9 +101,10 @@
   environment.systemPackages = with pkgs; [
     bibata-cursors
     bluez
-    equibop
+    cudatoolkit
     curl
     fuzzel
+    equibop
     git
     kitty
     krita
@@ -181,11 +175,15 @@
     options = [ "uid=1000" "gid=100" "umask=0077" ];
   };
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
-  };
+  nixpkgs.config.cudaSupport = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Cachix
+  nix.settings.extra-substituters = [ "https://noctalia.cachix.org"  ];
+  nix.settings.extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+  nix.settings.substituters = [ "https://cache.nixos-cuda.org" ];
+  nix.settings.trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ]; 
+  
   system.stateVersion = "25.11";
 }
