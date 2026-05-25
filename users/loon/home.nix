@@ -44,7 +44,7 @@
     pkgs.atuin
     pkgs.qbittorrent
     pkgs.vlc
-    prism
+    prismlauncher
     ripgrep
     starship
     yazi
