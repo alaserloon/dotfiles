@@ -23,7 +23,11 @@
     x11.enable = true;
     gtk.enable = true;
   };
-
+  
+  home.sessionVariables = {
+    BROWSER = "librewolf";
+    TERMINAL = "kitty";
+  };
 
   home.packages = with pkgs; [
     alacritty
@@ -40,6 +44,7 @@
     pkgs.atuin
     pkgs.qbittorrent
     pkgs.vlc
+    prism
     ripgrep
     starship
     yazi
@@ -54,6 +59,7 @@
   home.activation.flatpakSetup = ''
   ${pkgs.flatpak}/bin/flatpak install -y flathub com.spotify.Client
   ${pkgs.flatpak}/bin/flatpak install -y flathub fr.handbrake.ghb
+  ${pkgs.flatpak}/bin/flatpak install -y flathub org.vinegarhq.Sober
 '';
 
   programs.home-manager.enable = true;
