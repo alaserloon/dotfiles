@@ -4,83 +4,98 @@
   imports = [
     ./hardware-configuration.nix
   ];
+  
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    supportedFilesystems = [ "nfs" ];
+  };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "nfs" ];
-
-  networking.hostName = "asphodel";
-  networking.networkmanager.enable = true;
+  networking = { 
+    hostName = "asphodel";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "America/Chicago";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  hardware.enableAllFirmware = true;
-  hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-  ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;    
-    open = false;    
-    nvidiaSettings = true;    
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-  };
-
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = {
-    default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "loon";
-      };
+  i18n = { 
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
     };
   };
 
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
-  services.dbus.enable = true;
-  services.dbus.packages = with pkgs; [
-    dconf
-  ];
+  hardware = { 
+    enableAllFirmware = true;
+    graphics.enable = true;
+    graphics.extraPackages = with pkgs; [
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-tools
+    ];
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;    
+      open = false;    
+      nvidiaSettings = true;    
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
+    };
+    xone.enable = true;
+    steam-hardware.enable = true;
+  };
 
+  services = { 
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      xkb = { 
+        layout = "us";
+        variant = "";
+      };
+    };
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+          user = "loon";
+        };
+      };
+    };
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
+    dbus.enable = true;
+    dbus.packages = with pkgs; [
+      dconf
+    ];
+    flatpak.enable = true;
+    sunshine = {
+      enable = true;
+      autoStart = false; # Will need to start with `sunshine`
+      capSysAdmin = true; # Needed on Wayland
+      openFirewall = true;
+    };
+  };
+
+  security.rtkit.enable = true;
 
   users.users.loon = {
     isNormalUser = true;
@@ -89,24 +104,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-#  xdg.portal = {
-#    enable = true;
-#    xdgOpenUsePortal = true;
-#    extraPortals = with pkgs; [
-#      xdg-desktop-portal-gtk
-#      xdg-desktop-portal-gnome
-#    ];
-#    config = {
-#      common.default = "gtk";
-#      niri = {
-#        default = [ "gnome" ];
-#        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-#        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
-#        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-#      };
-#    };
-#  };
 
   environment.systemPackages = with pkgs; [
     bibata-cursors
@@ -123,36 +120,41 @@
     neovim
     steam-run
     tree
-    vesktop
     vim
     vulkan-tools
     wget
     xwayland-satellite
   ];
 
-    programs.niri = {
+  programs = {
+    niri.enable = true;
+    fish.enable = true;
+    thunar.enable = true;
+    firefox.enable = true;
+    steam = {
       enable = true;
+      remotePlay.openFirewall = true; 
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
     };
-    xdg.portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-gtk
-      ];
-      config.common.default = ["gnome"];
-    };
+  };
 
-  programs.fish.enable = true;
-  programs.thunar.enable = true;
-  programs.firefox.enable = true;
-  services.flatpak.enable = true;
-  hardware.xone.enable = true;
-  hardware.steam-hardware.enable = true;
-  programs.steam = {
+  xdg.portal = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      common.default = "gtk";
+      niri = {
+        default = [ "gnome" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+      };
+    };
   };
 
   environment.variables = {
@@ -166,14 +168,6 @@
     XCURSOR_SIZE = "22";
   };
 
-  environment.shellAliases = {
-  spotify = "QT_QPA_PLATFORM=xcb spotify";
-};
-
-  environment.etc."spotify-wrapper".text = ''
-    #!/bin/sh
-    exec env QT_QPA_PLATFORM=xcb ${pkgs.spotify}/bin/spotify "$@"
-  '';
 
   fileSystems."/media-pool" = {
     device = "192.168.50.39:/media-pool";
@@ -188,11 +182,10 @@
   };
 
   nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
     extra-substituters = [ "https://noctalia.cachix.org" ];
     extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "25.11";
 }
