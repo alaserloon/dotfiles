@@ -98,8 +98,8 @@
       # Navigation - Columns
       "super+Left".action = focus-column-left;
       "super+Right".action = focus-column-right;
-      "super+Shift+WheelScrollDown" = { action = focus-column-right; };
-      "super+Shift+WheelScrollUp" = { action = focus-column-left; };
+      "super+Alt+WheelScrollDown" = { action = focus-column-right; };
+      "super+Alt+WheelScrollUp" = { action = focus-column-left; };
 
       # Navigation - Workspaces
       "super+Down".action = focus-workspace-down;
@@ -108,10 +108,10 @@
       "super+WheelScrollUp" = { action = focus-workspace-up; cooldown-ms = 150; };
 
       # Move windows
-      "super+Alt+Left".action = move-column-left;
-      "super+Alt+Right".action = move-column-right;
-      "super+Alt+Down".action = move-column-to-workspace-down;
-      "super+Alt+Up".action = move-column-to-workspace-up;
+      "super+Shift+Left".action = move-column-left;
+      "super+Shift+Right".action = move-column-right;
+      "super+Shift+Down".action = move-column-to-workspace-down;
+      "super+Shift+Up".action = move-column-to-workspace-up;
 
       # Workspace switching
       "super+1".action = focus-workspace "main";
