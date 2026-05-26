@@ -35,17 +35,26 @@
     TERMINAL = "kitty";
   };
 
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = "librewolf.desktop";
+    "text/xml" = "librewolf.desktop";
+    "application/xhtml+xml" = "librewolf.desktop";
+    "application/vnd.mozilla.xul+xml" = "librewolf.desktop";
+    "x-scheme-handler/http" = "librewolf.desktop";
+    "x-scheme-handler/https" = "librewolf.desktop";
+  };
+
   home.packages = with pkgs; [
     alacritty
     bash
     bat
     btop
-    firefox
     fish
     foot
     fuzzel
     #handbrake # Use flatpak due to nvenc not working on nixpkgs.
     git
+    librewolf
     mako
     pkgs.atuin
     pkgs.qbittorrent

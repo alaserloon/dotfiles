@@ -110,7 +110,6 @@
     git
     kitty
     krita
-    librewolf
     mako
     nautilus
     neovim
