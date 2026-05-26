@@ -23,6 +23,12 @@
     x11.enable = true;
     gtk.enable = true;
   };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
   
   home.sessionVariables = {
     BROWSER = "librewolf";
