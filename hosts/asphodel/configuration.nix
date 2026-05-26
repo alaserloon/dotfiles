@@ -80,6 +80,8 @@
       dconf
     ];
     flatpak.enable = true;
+    gvfs.enable = true; # Mount, trash, and other functionalities
+    tumbler.enable = true; # Thumbnail support for images
     sunshine = {
       enable = true;
       autoStart = false;   # Will need to start with `sunshine`
@@ -113,6 +115,8 @@
     nautilus
     neovim
     steam-run
+    thunar-volman
+    thunar-archive-plugin
     tree
     vim
     vulkan-tools
@@ -124,6 +128,7 @@
     niri.enable = true;
     fish.enable = true;
     thunar.enable = true;
+    xfconf.enable = true;
     firefox.enable = true;
     steam = {
       enable = true;
