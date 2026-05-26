@@ -1,8 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-
-  programs.niri.settings = {
+  wayland.windowManager.niri.settings = {
 
     cursor = {
       theme = "Bibata-Modern-Ice";
@@ -10,45 +9,51 @@
     };
 
     # Workspaces
-    workspaces = {
-      "main" = {
+    workspaces = [
+      {
+        _args = [ "main" ];
         open-on-output = "DP-4";
-      };
-      "steam" = {
+      }
+      {
+        _args = [ "steam" ];
         open-on-output = "DP-4";
-      };
-      "discord" = {
+      }
+      {
+        _args = [ "discord" ];
         open-on-output = "DP-5";
-      };
-      "music" = {
+      }
+      {
+        _args = [ "music" ];
         open-on-output = "DP-5";
-      };
-    };
+      }
+    ];
 
     # Outputs (monitors)
-    outputs = {
-      "DP-4" = {
+    output = [
+      {
+        _args = [ "DP-4" ];
         scale = 1.0;
-        position = { x = 0; y = 0; };
-        mode = {
+        position._props = { x = 0; y = 0; };
+        mode._props = {
           width = 3440;
           height = 1440;
           refresh = 165.0;
         };
         variable-refresh-rate = true;
         focus-at-startup = true;
-      };
-      "DP-5" = {
+      }
+      {
+        _args = [ "DP-5" ];
         scale = 1.0;
-        position = { x = 3445; y = 0; };
-        mode = {
+        position._props = { x = 3445; y = 0; };
+        mode._props = {
           width = 2560;
           height = 1440;
           refresh = 165.0;
         };
         transform.rotation = 270;
-      };
-    };
+      }
+    ];
 
     # Keyboard and input
     input = {
@@ -61,7 +66,7 @@
     };
 
     # Keybinds
-    binds = with config.lib.niri.actions; 
+    binds = 
     let
       noctalia = cmd: [ "noctalia-shell" "ipc" "call" ] ++ (pkgs.lib.splitString " " cmd);
     in
@@ -82,122 +87,102 @@
 
       # App launcher & shortcuts
       "super+space".action.spawn = noctalia "launcher toggle";
-      "super+q".action = close-window;
+      "super+q".action.close-window = { };
       "super+b".action.spawn = [ "librewolf" ];
       "super+Return".action.spawn = [ "kitty" ];
       "super+E".action.spawn = [ "thunar" ];
       "super+L".action.spawn = noctalia "lockScreen lock";
 
       # Window control
-      "super+f".action = fullscreen-window;
-      "super+v".action = toggle-window-floating;
+      "super+f".action.fullscreen-window = { };
+      "super+v".action.toggle-window-floating = { };
 
       # Screenshot
-      "Print".action.screenshot = [ ];
-      "Shift+Print".action.screenshot-window = [ ];
+      "Print".action.screenshot = { };
+      "Shift+Print".action.screenshot-window = { };
 
       # Navigation - Columns
-      "super+Left".action = focus-column-left;
-      "super+Right".action = focus-column-right;
-      "super+Shift+WheelScrollDown" = { action = focus-column-right; };
-      "super+Shift+WheelScrollUp" = { action = focus-column-left; };
+      "super+Left".action.focus-column-left = { };
+      "super+Right".action.focus-column-right = { };
+      "super+Shift+WheelScrollDown".action.focus-column-right = { };
+      "super+Shift+WheelScrollUp".action.focus-column-left = { };
 
       # Navigation - Workspaces
-      "super+Down".action = focus-workspace-down;
-      "super+Up".action = focus-workspace-up;
-      "super+WheelScrollDown" = { action = focus-workspace-down; cooldown-ms = 150; };
-      "super+WheelScrollUp" = { action = focus-workspace-up; cooldown-ms = 150; };
+      "super+Down".action.focus-workspace-down = { };
+      "super+Up".action.focus-workspace-up = { };
+      "super+WheelScrollDown".action.focus-workspace-down = { cooldown-ms = 150; };
+      "super+WheelScrollUp".action.focus-workspace-up = { cooldown-ms = 150; };
 
       # Move windows
-      "super+Alt+Left".action = move-column-left;
-      "super+Alt+Right".action = move-column-right;
-      "super+Alt+Down".action = move-column-to-workspace-down;
-      "super+Alt+Up".action = move-column-to-workspace-up;
-      # "super+Alt+1".action = move-column-to-workspace ;
-      # "super+Alt+2".action = move-column-to-workspace ;
-      # "super+Alt+3".action = move-column-to-workspace ;
-      # "super+Alt+4".action = move-column-to-workspace ;
+      "super+Alt+Left".action.move-column-left = { };
+      "super+Alt+Right".action.move-column-right = { };
+      "super+Alt+Down".action.move-column-to-workspace-down = { };
+      "super+Alt+Up".action.move-column-to-workspace-up = { };
 
       # Workspace switching
-      "super+1".action = focus-workspace "main";
-      "super+2".action = focus-workspace "steam";
-      "super+3".action = focus-workspace "discord";
-      "super+4".action = focus-workspace "music";
+      "super+1".action.focus-workspace = { _args = [ "main" ]; };
+      "super+2".action.focus-workspace = { _args = [ "steam" ]; };
+      "super+3".action.focus-workspace = { _args = [ "discord" ]; };
+      "super+4".action.focus-workspace = { _args = [ "music" ]; };
     };
 
     # Layout
     layout = {
       gaps = 10;
-      background-color = "transparent";
+      background-color = "\"transparent\"";
       focus-ring = {
         enable = true;
         width = 3;
-        active = { color = "#A8AEFF"; };
-        inactive = { color = "#505050"; };
+        active.color = "\"#A8AEFF\"";
+        inactive.color = "\"#505050\"";
       };
     };
 
     # Window and layer rules
-    layer-rules = [
+    layer-rule = [
       {
-        matches = [
-          {
-            namespace = "^noctalia-wallpaper*";
-          }
-        ];
+        match._props.namespace = "\"^noctalia-wallpaper*\"";
         place-within-backdrop = true;
       }
     ];
 
-    window-rules = [
+    window-rule = [
       # Browsers
       {
-        matches = [
-          { app-id = "firefox"; }
-        ];
-        open-on-workspace = "main"; 
+        match.app-id = "\"firefox\"";
+        open-on-workspace = "browser";
       }
       {
-        matches = [
-          { app-id = "librewolf"; }
-        ];
-        open-on-workspace = "main";
+        match.app-id = "\"librewolf\"";
+        open-on-workspace = "browser";
       }
 
       # Discord
       {
-        matches = [
-          { app-id = "vesktop"; }
-        ];
+        match.app-id = "\"vesktop\"";
         open-on-workspace = "discord";
       }
       {
-        matches = [
-          { app-id = "discord"; }
-        ];
+        match.app-id = "\"discord\"";
         open-on-workspace = "discord";
       }
 
       # Music
       {
-        matches = [
-          { title = "spotify_player"; }
-        ];
+        match.title = "\"spotify_player\"";
         open-on-workspace = "music";
       }
 
       # Gaming
       {
-        matches = [
-          { app-id = "waywall"; }
-        ];
+        match.app-id = "\"waywall\"";
         open-maximized = true;
       }
 
       # Global window styling
       {
-        matches = [{ }];
-        geometry-corner-radius = {
+        match = { };
+        geometry-corner-radius._props = {
           top-left = 20.0;
           top-right = 20.0;
           bottom-left = 20.0;
@@ -208,13 +193,9 @@
     ];
 
     # UI settings
-    hotkey-overlay = {
-      skip-at-startup = true;
-    };
+    hotkey-overlay.skip-at-startup = true;
 
-    overview = {
-      workspace-shadow.enable = false;
-    };
+    overview.workspace-shadow.enable = false;
 
     # Spawn at startup
     spawn-at-startup = [
@@ -246,7 +227,4 @@
       DISPLAY = ":0";
     };
   };
-
-  # Systemd user services
-  systemd.user.startServices = "sd-switch";
 }
