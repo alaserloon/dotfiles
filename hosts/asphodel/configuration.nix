@@ -46,6 +46,11 @@
     };
     xone.enable = true;
     steam-hardware.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      package = pkgs.bluez;
+    };
   };
 
   services = {
