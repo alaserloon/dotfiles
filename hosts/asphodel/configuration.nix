@@ -113,6 +113,7 @@
     mako
     nautilus
     neovim
+    pkgs.firefoxpwa
     steam-run
     thunar-volman
     thunar-archive-plugin
@@ -128,7 +129,11 @@
     fish.enable = true;
     thunar.enable = true;
     xfconf.enable = true;
-    firefox.enable = true;
+    firefox = { 
+      enable = true;
+      package = pkgs.firefox;
+      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true; 

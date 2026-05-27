@@ -57,6 +57,7 @@
     fuzzel
     #handbrake # Use flatpak due to nvenc not working on nixpkgs.
     git
+    krita
     librewolf
     mako
     pkgs.atuin

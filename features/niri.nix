@@ -45,13 +45,13 @@
 
       layout = {
         gaps = 10;
+	always-center-single-column._args = [];
         struts = {
           left = 0;
           right = 0;
           top = 0;
           bottom = 0;
         };
-        default-column-width = { proportion = 0.5; };
         preset-column-widths = {
           _children = [
             { proportion = 0.33333; }
@@ -60,6 +60,7 @@
             { proportion = 1.0; }
           ];
         };
+	default-column-width = {};
         focus-ring = {
           on._args = [];
           width = 2;
@@ -234,7 +235,30 @@
       window-rule = [
         {
           geometry-corner-radius = 10;
-	  clip-to-geometry = true;
+          clip-to-geometry = true;
+        }
+
+        # Steam Notification Fix
+        {
+          match = {
+            _props.app-id = "steam";
+            _props.title._raw = ''r#"^notificationtoasts_\d+_desktop$"#'';
+          };
+          default-floating-position = {
+            _props = {
+              x = 10;
+              y = 10;
+              relative-to = "bottom-right";
+            };
+          };
+        }
+        {
+          match = {
+            _props.app-id = "librewolf";
+          };
+          default-column-width = { 
+            proportion = 0.75;
+          };
         }
       ];
 
