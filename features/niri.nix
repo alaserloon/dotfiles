@@ -3,10 +3,10 @@
   wayland.windowManager.niri = {
     enable = true;
     settings = {
-    
+
       hotkey-overlay = {
-        skip-at-startup = [];
-	hide-not-bound = [];
+        skip-at-startup = [ ];
+        hide-not-bound = [ ];
       };
 
       input = {
@@ -14,27 +14,27 @@
           xkb = {
             layout = "us";
           };
-          numlock._args = [];
+          numlock._args = [ ];
         };
-        focus-follows-mouse._args = [];
+        focus-follows-mouse._args = [ ];
       };
 
       output = [
         {
           _args = [ "DP-4" ];
           mode = "3440x1440@165";
-	  position._props = {
-	    x = 0;
-	    y = 0;
-	  };
+          position._props = {
+            x = 0;
+            y = 0;
+          };
           scale = 1.0;
-	  focus-at-startup._args = [];
+          focus-at-startup._args = [ ];
         }
         {
           _args = [ "DP-5" ];
           mode = "2560x1440@60";
           position._props = {
-            x = 3445;
+            x = 3442;
             y = 0;
           };
           transform = "270";
@@ -45,7 +45,7 @@
 
       layout = {
         gaps = 10;
-	always-center-single-column._args = [];
+        always-center-single-column._args = [ ];
         struts = {
           left = 0;
           right = 0;
@@ -60,12 +60,12 @@
             { proportion = 1.0; }
           ];
         };
-	default-column-width = {};
+        default-column-width = { };
         focus-ring = {
-          on._args = [];
+          on._args = [ ];
           width = 2;
-	  active-color._args = [ "#A8AEFF" ];
-	  inactive-color._args = [ "#505050" ];
+          active-color._args = [ "#A8AEFF" ];
+          inactive-color._args = [ "#505050" ];
         };
       };
 
@@ -90,8 +90,8 @@
       binds = {
 
         "Mod+slash" = {
-	  show-hotkey-overlay._args = [];
-	};
+          show-hotkey-overlay._args = [ ];
+        };
 
         # Volume
         "XF86AudioRaiseVolume" = {
@@ -129,80 +129,80 @@
 
         # App launcher & shortcuts
         "Mod+space" = {
-	_props.hotkey-overlay-title = "App Launcher";
+          _props.hotkey-overlay-title = "App Launcher";
           "spawn-sh" = "noctalia-shell ipc call launcher toggle";
         };
         "Mod+q" = {
-          "close-window" = [];
+          "close-window" = [ ];
         };
         "Mod+b" = {
           spawn = "librewolf";
         };
         "Mod+w" = {
-	  _props.hotkey-overlay-title = "Open Web Browser";
+          _props.hotkey-overlay-title = "Open Web Browser";
           spawn = "librewolf";
         };
         "Mod+Return" = {
-	  _props.hotkey-overlay-title = "Open Terminal";
+          _props.hotkey-overlay-title = "Open Terminal";
           spawn = "kitty";
         };
         "Mod+e" = {
-	  _props.hotkey-overlay-title = "Open File Browser";
+          _props.hotkey-overlay-title = "Open File Browser";
           spawn = "thunar";
         };
         "Mod+l" = {
-	  _props.hotkey-overlay-title = "Lock screen";
+          _props.hotkey-overlay-title = "Lock screen";
           "spawn-sh" = "noctalia-shell ipc call lockScreen lock";
         };
 
         # Window control
         "Mod+f" = {
-          "fullscreen-window" = [];
+          "fullscreen-window" = [ ];
         };
         "Mod+v" = {
-          "toggle-window-floating" = [];
+          "toggle-window-floating" = [ ];
         };
 
         # Screenshot
         "Print" = {
-          screenshot = [];
+          screenshot = [ ];
         };
         "shift+Print" = {
-          "screenshot-window" = [];
+          "screenshot-window" = [ ];
         };
 
         # Navigation - Columns
         "Mod+Left" = {
-          "focus-column-left" = [];
+          "focus-column-left" = [ ];
         };
         "Mod+Right" = {
-          "focus-column-right" = [];
+          "focus-column-right" = [ ];
         };
         "Mod+shift+WheelScrollDown" = {
-          "focus-column-right" = [];
+          "focus-column-right" = [ ];
         };
         "Mod+shift+WheelScrollUp" = {
-          "focus-column-left" = [];
+          "focus-column-left" = [ ];
         };
 
         # Navigation - Workspaces
         "Mod+Down" = {
-          "focus-workspace-down" = [];
+          "focus-workspace-down" = [ ];
         };
         "Mod+Up" = {
-          "focus-workspace-up" = [];
+          "focus-workspace-up" = [ ];
         };
         "Mod+WheelScrollDown" = {
           _props = {
             cooldown-ms = 150;
           };
-          "focus-workspace-down" = [];
+          "focus-workspace-down" = [ ];
         };
         "Mod+WheelScrollUp" = {
           _props = {
             cooldown-ms = 150;
           };
-          "focus-workspace-up" = [];
+          "focus-workspace-up" = [ ];
         };
 
         # Workspaces
@@ -256,13 +256,13 @@
           match = {
             _props.app-id = "librewolf";
           };
-          default-column-width = { 
+          default-column-width = {
             proportion = 0.75;
           };
         }
       ];
 
-      prefer-no-csd._args = [];
+      prefer-no-csd._args = [ ];
     };
 
     extraConfig = "";

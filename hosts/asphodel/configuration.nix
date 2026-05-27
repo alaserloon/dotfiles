@@ -1,34 +1,34 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
   ];
-  
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
 
   networking.hostName = "asphodel";
   networking.networkmanager.enable = true;
-  
+
   time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_TIME = "en_US.UTF-8";
-    };
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
-  hardware = { 
+  hardware = {
     enableAllFirmware = true;
     graphics.enable = true;
     graphics.extraPackages = with pkgs; [
@@ -39,20 +39,20 @@
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
-      powerManagement.finegrained = false;    
-      open = false;    
-      nvidiaSettings = true;    
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
     xone.enable = true;
     steam-hardware.enable = true;
   };
 
-  services = { 
+  services = {
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
-      xkb = { 
+      xkb = {
         layout = "us";
         variant = "";
       };
@@ -84,8 +84,8 @@
     tumbler.enable = true; # Thumbnail support for images
     sunshine = {
       enable = true;
-      autoStart = false;   # Will need to start with `sunshine`
-      capSysAdmin = true;  # Needed on Wayland
+      autoStart = false; # Will need to start with `sunshine`
+      capSysAdmin = true; # Needed on Wayland
       openFirewall = true;
     };
   };
@@ -98,9 +98,12 @@
     shell = pkgs.bash;
   };
 
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    alacritty
     bibata-cursors
     bluez
     cudatoolkit
@@ -108,7 +111,6 @@
     fuzzel
     equibop
     git
-    kitty
     krita
     mako
     nautilus
@@ -129,14 +131,14 @@
     fish.enable = true;
     thunar.enable = true;
     xfconf.enable = true;
-    firefox = { 
+    firefox = {
       enable = true;
       package = pkgs.firefox;
       nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
     };
     steam = {
       enable = true;
-      remotePlay.openFirewall = true; 
+      remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
@@ -148,7 +150,7 @@
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
-    config.common.default = ["gnome"];
+    config.common.default = [ "gnome" ];
   };
 
   environment.variables = {
@@ -171,7 +173,7 @@
 
   fileSystems."/home/loon/backup" = {
     device = "/dev/sda1";
-    fsType = "ntfs"; 
+    fsType = "ntfs";
     options = [ "uid=1000" "gid=100" "umask=0077" ];
   };
 
@@ -180,10 +182,10 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Cachix
-  nix.settings.extra-substituters = [ "https://noctalia.cachix.org"  ];
+  nix.settings.extra-substituters = [ "https://noctalia.cachix.org" ];
   nix.settings.extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
   nix.settings.substituters = [ "https://cache.nixos-cuda.org" ];
-  nix.settings.trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ]; 
-  
+  nix.settings.trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+
   system.stateVersion = "25.11";
 }

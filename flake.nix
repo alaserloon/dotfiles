@@ -21,12 +21,12 @@
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      home-manager,
-      niri-nix,
-      noctalia,
+    inputs@{ self
+    , nixpkgs
+    , home-manager
+    , niri-nix
+    , noctalia
+    ,
     }:
     {
       nixosConfigurations.asphodel = nixpkgs.lib.nixosSystem {
@@ -35,7 +35,7 @@
           ./hosts/asphodel/configuration.nix
           home-manager.nixosModules.home-manager
           {
-	    home-manager.backupFileExtension = "bak";
+            home-manager.backupFileExtension = "bak";
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.loon = import ./users/loon/home.nix;
             home-manager.sharedModules = [
