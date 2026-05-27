@@ -9,8 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
+    niri-nix = {
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,7 +25,7 @@
       self,
       nixpkgs,
       home-manager,
-      niri,
+      niri-nix,
       noctalia,
     }:
     {
@@ -39,7 +39,7 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.loon = import ./users/loon/home.nix;
             home-manager.sharedModules = [
-              niri.homeModules.niri
+              niri-nix.homeModules.default
               noctalia.homeModules.default
             ];
           }

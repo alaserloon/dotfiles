@@ -44,6 +44,9 @@
     "x-scheme-handler/https" = "librewolf.desktop";
   };
 
+  wayland.windowManager.niri.enable = true;
+  wayland.windowManager.niri.package = pkgs.niri;
+
   home.packages = with pkgs; [
     alacritty
     bash
@@ -76,6 +79,19 @@
   ${pkgs.flatpak}/bin/flatpak install -y flathub fr.handbrake.ghb
   ${pkgs.flatpak}/bin/flatpak install -y flathub org.vinegarhq.Sober
 '';
+
+home.sessionVariables = {
+  CLUTTER_BACKEND = "wayland";
+  GDK_BACKEND = "wayland,x11";
+  MOZ_ENABLE_WAYLAND = "1";
+  NIXOS_OZONE_WL = "1";
+  QT_QPA_PLATFORM = "wayland";
+  QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+  ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  XDG_SESSION_TYPE = "wayland";
+  XDG_CURRENT_DESKTOP = "niri";
+  DISPLAY = ":0";
+};
 
   programs.home-manager.enable = true;
 }
