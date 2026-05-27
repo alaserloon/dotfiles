@@ -59,7 +59,7 @@
     gh
     git
     jq
-    kate
+    kdePackages.kate
     kitty
     krita
     lazygit
