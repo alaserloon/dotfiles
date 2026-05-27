@@ -59,6 +59,7 @@
     gh
     git
     jq
+    kate
     kitty
     krita
     lazygit
