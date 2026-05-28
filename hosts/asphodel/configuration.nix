@@ -80,10 +80,6 @@
     };
     power-profiles-daemon.enable = true;
     upower.enable = true;
-    dbus.enable = true;
-    dbus.packages = with pkgs; [
-      dconf
-    ];
     flatpak.enable = true;
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
@@ -119,7 +115,6 @@
     gpu-screen-recorder-gtk
     krita
     mako
-    nautilus
     neovim
     pkgs.firefoxpwa
     steam-run
@@ -150,15 +145,6 @@
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config.common.default = [ "gnome" ];
   };
 
   environment.variables = {

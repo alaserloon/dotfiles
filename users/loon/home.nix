@@ -23,32 +23,27 @@
     gtk.enable = true;
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
-  home.sessionVariables = {
-    BROWSER = "librewolf";
-    FILEMANAGER = "thunar";
-    TERMINAL = "kitty";
-  };
 
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = "librewolf.desktop";
-    "text/xml" = "librewolf.desktop";
-    "application/xhtml+xml" = "librewolf.desktop";
-    "application/vnd.mozilla.xul+xml" = "librewolf.desktop";
-    "x-scheme-handler/http" = "librewolf.desktop";
-    "x-scheme-handler/https" = "librewolf.desktop";
-    "inode/directory" = "thunar.desktop";
-    "text/plain" = "org.kde.kate.desktop";
-    "text/x-c" = "org.kde.kate.desktop";
-    "text/x-c++" = "org.kde.kate.desktop";
-    "text/x-shellscript" = "org.kde.kate.desktop";
-    "application/x-python" = "org.kde.kate.desktop";
-  };
+  # xdg.mimeApps.defaultApplications = {
+  #   "text/html" = "librewolf.desktop";
+  #   "text/xml" = "librewolf.desktop";
+  #   "application/xhtml+xml" = "librewolf.desktop";
+  #   "application/vnd.mozilla.xul+xml" = "librewolf.desktop";
+  #   "x-scheme-handler/http" = "librewolf.desktop";
+  #   "x-scheme-handler/https" = "librewolf.desktop";
+  #   "inode/directory" = "thunar.desktop";
+  #   "text/plain" = "org.kde.kate.desktop";
+  #   "text/x-c" = "org.kde.kate.desktop";
+  #   "text/x-c++" = "org.kde.kate.desktop";
+  #   "text/x-shellscript" = "org.kde.kate.desktop";
+  #   "application/x-python" = "org.kde.kate.desktop";
+  # };
 
   wayland.windowManager.niri.enable = true;
   wayland.windowManager.niri.package = pkgs.niri;
@@ -72,6 +67,7 @@
     lazygit
     librewolf
     mako
+    nautilus
     pkgs.atuin
     pkgs.direnv
     pkgs.qbittorrent
@@ -103,9 +99,26 @@
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
   '';
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      niri = {
+        default = [ "gnome" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+      common.default = [ "gtk" ];
+    };
+  };
+
   home.sessionVariables = {
     CLUTTER_BACKEND = "wayland";
-    GDK_BACKEND = "wayland,x11";
+    # GDK_BACKEND = "wayland,x11";
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";

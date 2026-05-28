@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ ... }: {
 
   wayland.windowManager.niri = {
     enable = true;
