@@ -136,6 +136,7 @@
     fish.enable = true;
     thunar.enable = true;
     xfconf.enable = true;
+    gpu-screen-recorder.enable = true;
     firefox = {
       enable = true;
       package = pkgs.firefox;
