@@ -116,6 +116,7 @@
     fuzzel
     equibop
     git
+    gpu-screen-recorder-gtk
     krita
     mako
     nautilus
