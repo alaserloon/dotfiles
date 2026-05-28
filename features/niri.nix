@@ -67,7 +67,55 @@
           active-color._args = [ "#A8AEFF" ];
           inactive-color._args = [ "#505050" ];
         };
+        background-color = "transparent";
       };
+
+      overview = {
+        workspace-shadow = {
+          off._args = [ ];
+        };
+      };
+
+      layer-rule = [
+        {
+          match = {
+            _props.namespace._raw = ''r#"^noctalia-wallpaper.*"#'';
+          };
+          place-within-backdrop = true;
+        }
+      ];
+
+      window-rule = [
+        {
+          geometry-corner-radius = 10;
+          clip-to-geometry = true;
+        }
+
+        # Steam Notification Fix
+        {
+          match = {
+            _props.app-id = "steam";
+            _props.title._raw = ''r#"^notificationtoasts_\d+_desktop$"#'';
+          };
+          default-floating-position = {
+            _props = {
+              x = 10;
+              y = 10;
+              relative-to = "bottom-right";
+            };
+          };
+        }
+        {
+          match = {
+            _props.app-id = "librewolf";
+          };
+          default-column-width = {
+            proportion = 0.75;
+          };
+        }
+      ];
+
+      prefer-no-csd._args = [ ];
 
       spawn-at-startup = [
         {
@@ -231,40 +279,6 @@
           "move-window-to-workspace" = [ "4" ];
         };
       };
-
-      window-rule = [
-        {
-          geometry-corner-radius = 10;
-          clip-to-geometry = true;
-        }
-
-        # Steam Notification Fix
-        {
-          match = {
-            _props.app-id = "steam";
-            _props.title._raw = ''r#"^notificationtoasts_\d+_desktop$"#'';
-          };
-          default-floating-position = {
-            _props = {
-              x = 10;
-              y = 10;
-              relative-to = "bottom-right";
-            };
-          };
-        }
-        {
-          match = {
-            _props.app-id = "librewolf";
-          };
-          default-column-width = {
-            proportion = 0.75;
-          };
-        }
-      ];
-
-      prefer-no-csd._args = [ ];
     };
-
-    extraConfig = "";
   };
 }
