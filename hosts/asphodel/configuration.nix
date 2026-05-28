@@ -129,6 +129,7 @@
     vim
     vulkan-tools
     wget
+    wl-clipboard
     xwayland-satellite
   ];
 
