@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -96,12 +96,12 @@
   programs.yazi.shellWrapperName = "yy";
   programs.zoxide.enable = true;
 
-  home.activation.flatpakSetup = ''
-    ${pkgs.flatpak}/bin/flatpak install -y flathub com.spotify.Client
-    ${pkgs.flatpak}/bin/flatpak install -y flathub fr.handbrake.ghb
-    ${pkgs.flatpak}/bin/flatpak install -y flathub org.vinegarhq.Sober
+  home.activation.flatpakSetup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.spotify.Client || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub fr.handbrake.ghb || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
   '';
-
 
   home.sessionVariables = {
     CLUTTER_BACKEND = "wayland";
