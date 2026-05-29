@@ -9,7 +9,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
 
-  networking.hostName = "asphodel";
+  networking.hostName = "elysium";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
@@ -75,7 +75,7 @@
       settings = {
         default_session = {
           command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-          user = "loon";
+          user = "lizzy";
         };
       };
     };
@@ -94,7 +94,7 @@
 
   security.rtkit.enable = true;
 
-  users.users.loon = {
+  users.users.lizzy = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "bluetooth" ];
     shell = pkgs.bash;
@@ -164,12 +164,6 @@
     device = "192.168.50.39:/media-pool";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" ];
-  };
-
-  fileSystems."/home/loon/backup" = {
-    device = "/dev/sda1";
-    fsType = "ntfs";
-    options = [ "uid=1000" "gid=100" "umask=0077" ];
   };
 
   nixpkgs.config.cudaSupport = true;

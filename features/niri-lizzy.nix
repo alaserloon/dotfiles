@@ -25,7 +25,7 @@
       output = [
         {
           _args = [ "DP-4" ];
-          mode = "3440x1440@164.900";
+          mode = "2560x1440@165";
           position._props = {
             x = 0;
             y = 0;
@@ -34,21 +34,13 @@
           focus-at-startup._args = [ ];
         }
         {
-          _args = [ "DP-5" ];
-          mode = "2560x1440@143.972";
-          position._props = {
-            x = 3442;
-            y = 0;
-          };
-          transform = "270";
-        }
-        {
           _args = [ "HDMI-A-1" ];
           mode = "1920x1080@60.042";
           position._props = {
-            x = 3440;
+            x = 2560;
             y = 180;
           };
+          scale = 0.9999999999999997;
         }
       ];
 
