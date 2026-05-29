@@ -23,27 +23,11 @@
     gtk.enable = true;
   };
 
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
-
-
-  # xdg.mimeApps.defaultApplications = {
-  #   "text/html" = "librewolf.desktop";
-  #   "text/xml" = "librewolf.desktop";
-  #   "application/xhtml+xml" = "librewolf.desktop";
-  #   "application/vnd.mozilla.xul+xml" = "librewolf.desktop";
-  #   "x-scheme-handler/http" = "librewolf.desktop";
-  #   "x-scheme-handler/https" = "librewolf.desktop";
-  #   "inode/directory" = "thunar.desktop";
-  #   "text/plain" = "org.kde.kate.desktop";
-  #   "text/x-c" = "org.kde.kate.desktop";
-  #   "text/x-c++" = "org.kde.kate.desktop";
-  #   "text/x-shellscript" = "org.kde.kate.desktop";
-  #   "application/x-python" = "org.kde.kate.desktop";
-  # };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
 
   wayland.windowManager.niri.enable = true;
   wayland.windowManager.niri.package = pkgs.niri;
