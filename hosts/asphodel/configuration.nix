@@ -51,8 +51,8 @@
       powerOnBoot = true;
       package = pkgs.bluez;
     };
-    opentabletdriver.enable = true;
   };
+
 
   services = {
     xserver = {

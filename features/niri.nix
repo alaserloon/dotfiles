@@ -42,14 +42,6 @@
           };
           transform = "270";
         }
-        {
-          _args = [ "HDMI-A-1" ];
-          mode = "1920x1080@60.042";
-          position._props = {
-            x = 3440;
-            y = 180;
-          };
-        }
       ];
 
 
