@@ -1,9 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ ... }: {
 
-{
-  home.packages = [ pkgs.noctalia-shell ];
+  programs.noctalia = {
+    enable = true;
 
-  xdg.configFile."noctalia-shell/noctalia.json".text = lib.generators.toJSON {} {
     settings = {
       settingsVersion = 59;
 
@@ -117,6 +116,9 @@
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
             }
+            { id = "audio_visualizer"; }
+            { id = "media"; }
+            { id = "bongocat"; }
           ];
           right = [
             {
@@ -314,7 +316,7 @@
 
       # Dock Configuration
       dock = {
-        enabled = false;
+        enabled = true;
         position = "bottom";
         displayMode = "auto_hide";
         dockType = "floating";
@@ -323,7 +325,15 @@
         size = 1;
         onlySameOutput = true;
         monitors = [ ];
-        pinnedApps = [ ];
+        pinnedApps = [
+          "kitty"
+          "librewolf"
+          "steam"
+          "equibop"
+          "com.spotify.Client"
+          "FFPWA-01KSRNJ4GQZHM7KDXXQXB18M7C"
+          "fr.handbrake.ghb"
+        ];
         colorizeIcons = false;
         showLauncherIcon = false;
         launcherPosition = "end";
@@ -343,6 +353,8 @@
         indicatorThickness = 3;
         indicatorColor = "primary";
         indicatorOpacity = 0.6;
+        icon_size = 32;
+        auto_hide = true;
       };
 
       # Network Settings
@@ -423,6 +435,7 @@
 
       # Audio Settings
       audio = {
+        enable_sounds = true;
         volumeStep = 5;
         volumeOverdrive = false;
         spectrumFrameRate = 30;
@@ -516,17 +529,86 @@
         gridSnapScale = false;
         monitorWidgets = [ ];
       };
-    };
 
-    state = {
-      doNotDisturb = false;
-      noctaliaPerformanceMode = false;
-      barVisible = true;
-      openedPanel = "";
-      lockScreenActive = false;
-      desktopWidgetsEditMode = false;
-      ui = {
-        settingsSidebarExpanded = true;
+      # Wallpaper
+      wallpaper = {
+        directory = "/home/loon/Pictures/Wallpapers";
+        default = {
+          path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png";
+        };
+        last = {
+          path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png";
+        };
+      };
+
+      # Theme
+      theme = {
+        source = "wallpaper";
+        wallpaper_scheme = "m3-tonal-spot";
+        templates = {
+          builtin_ids = [ "btop" "gtk3" "gtk4" "helix" "kitty" "niri" "qt" "starship" ];
+          community_ids = [ "fuzzel" "discord" "steam" "yazi" ];
+        };
+      };
+
+      # Shell
+      shell = {
+        avatar_path = "/home/loon/Pictures/Avatars/rem-token-square.png";
+        font_family = "JetBrainsMono Nerd Font";
+        lang = "en";
+        niri_overview_type_to_launch_enabled = true;
+        telemetry_enabled = true;
+        panel = {
+          transparency_mode = "soft";
+        };
+      };
+
+      # Weather
+      weather = {
+        address = "Apple Valley, MN";
+        unit = "imperial";
+      };
+
+      # Notification Scale
+      notification = {
+        scale = 0.75;
+      };
+
+      # Widget Customizations
+      widget = {
+        bongocat = {
+          color = "tertiary";
+          script = "scripts/bongocat.lua";
+          type = "scripted";
+        };
+        clock = {
+          format = "{:%H:%M%p}";
+        };
+        "control-center" = {
+          color = "primary";
+          custom_image = "/home/loon/styx/features/assets/nix-snowflake-white.svg";
+        };
+        launcher = {
+          color = "primary";
+          glyph = "rocket";
+        };
+        media = {
+          hide_when_no_media = true;
+          title_scroll = "on_hover";
+        };
+        network = {
+          show_label = false;
+        };
+        tray = {
+          drawer = true;
+        };
+        volume = {
+          show_label = false;
+        };
+        workspaces = {
+          display = "none";
+          pill_scale = 0.5;
+        };
       };
     };
   };

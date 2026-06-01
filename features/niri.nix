@@ -17,9 +17,6 @@
           numlock._args = [ ];
         };
         focus-follows-mouse._args = [ ];
-        tablet = {
-          map-to-output._args = [ "HDMI-A-1" ];
-        };
       };
 
       output = [
@@ -134,7 +131,7 @@
           _args = [ "xwayland-satellite" ];
         }
         {
-          _args = [ "noctalia-shell" ];
+          _args = [ "noctalia" ];
         }
         {
           _args = [ "librewolf" ];
@@ -149,42 +146,42 @@
 
         # Volume
         "XF86AudioRaiseVolume" = {
-          "spawn-sh" = "noctalia-shell ipc call volume increase";
+          "spawn-sh" = "noctalia msg volume-up";
         };
         "XF86AudioLowerVolume" = {
-          "spawn-sh" = "noctalia-shell ipc call volume decrease";
+          "spawn-sh" = "noctalia msg volume-down";
         };
         "XF86AudioMute" = {
-          "spawn-sh" = "noctalia-shell ipc call volume muteOutput";
+          "spawn-sh" = "noctalia msg volume-mute";
         };
         "shift+XF86AudioRaiseVolume" = {
-          "spawn-sh" = "noctalia-shell ipc call volume increaseInput";
+          "spawn-sh" = "noctalia msg volume-up";
         };
         "shift+XF86AudioLowerVolume" = {
-          "spawn-sh" = "noctalia-shell ipc call volume decreaseInput";
+          "spawn-sh" = "noctalia msg volume-down";
         };
         "shift+XF86AudioMute" = {
-          "spawn-sh" = "noctalia-shell ipc call volume muteInput";
+          "spawn-sh" = "noctalia msg volume-mute";
         };
         "ctrl+XF86AudioMute" = {
-          "spawn-sh" = "noctalia-shell ipc call volume togglePanel";
+          "spawn-sh" = "noctalia msg volume togglePanel";
         };
 
         # Media
         "XF86AudioPlay" = {
-          "spawn-sh" = "noctalia-shell ipc call media playPause";
+          "spawn-sh" = "noctalia msg media toggle";
         };
         "XF86AudioNext" = {
-          "spawn-sh" = "noctalia-shell ipc call media next";
+          "spawn-sh" = "noctalia msg media next";
         };
         "XF86AudioPrev" = {
-          "spawn-sh" = "noctalia-shell ipc call media previous";
+          "spawn-sh" = "noctalia msg media previous";
         };
 
         # App launcher & shortcuts
         "Mod+space" = {
           _props.hotkey-overlay-title = "App Launcher";
-          "spawn-sh" = "noctalia-shell ipc call launcher toggle";
+          "spawn-sh" = "noctalia msg panel-toggle launcher";
         };
         "Mod+q" = {
           "close-window" = [ ];
@@ -206,7 +203,7 @@
         };
         "Mod+l" = {
           _props.hotkey-overlay-title = "Lock screen";
-          "spawn-sh" = "noctalia-shell ipc call lockScreen lock";
+          "spawn-sh" = "noctalia msg session lock";
         };
 
         # Window control
