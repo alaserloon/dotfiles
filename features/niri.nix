@@ -102,6 +102,7 @@
             _props.app-id = "steam";
             _props.title._raw = ''r#"^notificationtoasts_\d+_desktop$"#'';
           };
+          open-focused = false;
           default-floating-position = {
             _props = {
               x = 10;
