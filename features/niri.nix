@@ -256,6 +256,61 @@
           "focus-workspace-up" = [ ];
         };
 
+        "Mod+Ctrl+WheelScrollDown" = {
+          _props = {
+            cooldown-ms = 150;
+          };
+          "focus-monitor-right" = [ ];
+        };
+        "Mod+Ctrl+WheelScrollUp" = {
+          _props = {
+            cooldown-ms = 150;
+          };
+          "focus-monitor-left" = [ ];
+        };
+        "Mod+Ctrl+Shift+WheelScrollDown" = {
+          _props = {
+            cooldown-ms = 150;
+          };
+          "move-window-to-monitor-right" = [ ];
+        };
+
+        "Mod+Ctrl+Shift+WheelScrollUp" = {
+          _props = {
+            cooldown-ms = 150;
+          };
+          "move-window-to-monitor-left" = [ ];
+        };
+
+        # Monitors
+
+        "Mod+Ctrl+Left" = {
+          "focus-monitor-left" = [ ];
+        };
+        "Mod+Ctrl+Down" = {
+          "focus-monitor-down" = [ ];
+        };
+        "Mod+Ctrl+Up" = {
+          "focus-monitor-up" = [ ];
+        };
+        "Mod+Ctrl+Right" = {
+          "focus-monitor-right" = [ ];
+        };
+
+        "Mod+Ctrl+Shift+Left" = {
+          "move-column-to-monitor-left" = [ ];
+        };
+        "Mod+Ctrl+Shift+Up" = {
+          "move-column-to-monitor-up" = [ ];
+        };
+        "Mod+Ctrl+Shift+Down" = {
+          "move-column-to-monitor-down" = [ ];
+        };
+        "Mod+Ctrl+Shift+Right" = {
+          "move-column-to-monitor-right" = [ ];
+        };
+
+
         # Workspaces
         "Mod+1" = {
           "focus-workspace" = 1;
@@ -279,7 +334,7 @@
           "move-window-to-workspace" = 3;
         };
         "Mod+shift+4" = {
-          "move-window-to-workspace" = [ "4" ];
+          "move-window-to-workspace" = 4;
         };
       };
     };
