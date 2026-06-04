@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -114,10 +114,12 @@
     equibop
     git
     gpu-screen-recorder-gtk
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     krita
     mako
     neovim
-    pkgs.firefoxpwa
+    # pkgs.firefoxpwa
+    pkgs.stremio-linux-shell
     steam-run
     thunar-volman
     thunar-archive-plugin
@@ -138,15 +140,18 @@
     firefox = {
       enable = true;
       package = pkgs.firefox;
-      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+      # nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
     };
     steam = {
       enable = true;
+      package = pkgs.millennium-steam;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
   };
+
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
   environment.variables = {
     DISPLAY = ":0";

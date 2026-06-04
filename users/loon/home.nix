@@ -1,6 +1,7 @@
 { inputs, pkgs, lib, ... }:
 
 {
+
   imports = [
     ../../features/niri.nix
     ../../features/noctalia.nix
@@ -81,6 +82,7 @@
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.spotify.Client || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub fr.handbrake.ghb || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub net.lutris.Lutris || true
   '';
 
   xdg.portal = {
@@ -102,7 +104,6 @@
 
   home.sessionVariables = {
     CLUTTER_BACKEND = "wayland";
-    # GDK_BACKEND = "wayland,x11";
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";

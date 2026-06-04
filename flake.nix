@@ -18,6 +18,15 @@
       url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    millennium = {
+      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -26,6 +35,8 @@
     , home-manager
     , niri-nix
     , noctalia
+    , millennium
+    , zen-browser
     ,
     }:
     {

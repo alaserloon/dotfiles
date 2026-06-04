@@ -116,6 +116,14 @@
             proportion = 0.75;
           };
         }
+        {
+          match = {
+            _props.app-id = "zen";
+          };
+          default-column-width = {
+            proportion = 0.75;
+          };
+        }
       ];
 
       prefer-no-csd._args = [ ];
@@ -133,8 +141,11 @@
         {
           _args = [ "noctalia" ];
         }
+        # {
+        #   _args = [ "librewolf" ];
+        # }
         {
-          _args = [ "librewolf" ];
+          _args = [ "zen" ];
         }
       ];
 
@@ -191,7 +202,7 @@
         };
         "Mod+w" = {
           _props.hotkey-overlay-title = "Open Web Browser";
-          spawn = "librewolf";
+          spawn = "zen";
         };
         "Mod+Return" = {
           _props.hotkey-overlay-title = "Open Terminal";
