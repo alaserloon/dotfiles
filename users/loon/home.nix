@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
 
@@ -38,6 +38,7 @@
     bash
     bat
     btop
+    deadlock-mod-manager
     eza
     fd
     fish

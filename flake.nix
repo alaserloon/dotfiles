@@ -46,7 +46,7 @@
           ./hosts/asphodel/configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.backupFileExtension = "bak";
+            home-manager.backupFileExtension = "hm-bak";
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.loon = import ./users/loon/home.nix;
             home-manager.sharedModules = [
