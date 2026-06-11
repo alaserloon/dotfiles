@@ -27,6 +27,10 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,7 +41,7 @@
     , noctalia
     , millennium
     , zen-browser
-    ,
+    , spicetify-nix
     }:
     {
       nixosConfigurations.asphodel = nixpkgs.lib.nixosSystem {
@@ -52,6 +56,7 @@
             home-manager.sharedModules = [
               niri-nix.homeModules.default
               noctalia.homeModules.default
+              spicetify-nix.homeManagerModules.default
             ];
           }
         ];

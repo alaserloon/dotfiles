@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
+
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 
 {
 
@@ -40,6 +44,7 @@
     btop
     deadlock-mod-manager
     eza
+    fastfetch
     fd
     fish
     fuzzel
@@ -61,6 +66,7 @@
     prismlauncher
     ripgrep
     starship
+    unzip
     yazi
     zoxide
   ];
@@ -73,6 +79,19 @@
   programs.jq.enable = true;
   programs.lazygit.enable = true;
   programs.ripgrep.enable = true;
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    enabledCustomApps = with spicePkgs.apps; [
+      marketplace
+    ];
+    theme = spicePkgs.themes.comfy;
+    colorScheme = "catppuccin-mocha";
+  };
   programs.starship.enable = true;
   programs.yazi.enable = true;
   programs.yazi.shellWrapperName = "yy";
@@ -80,7 +99,6 @@
 
   home.activation.flatpakSetup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.spotify.Client || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub fr.handbrake.ghb || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub net.lutris.Lutris || true
@@ -116,6 +134,7 @@
   };
 
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "25.11";
 
