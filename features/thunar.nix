@@ -3,46 +3,46 @@
 {
   home.packages = with pkgs; [
     thunar
-    thunar-archive-plugin  # Archive support (zip, tar, etc)
+    thunar-archive-plugin # Archive support (zip, tar, etc)
     thunar-media-tags-plugin
-    thunar-volman 
-    xarchiver  # GUI archive manager that Thunar uses for zip operations
+    thunar-volman
+    xarchiver # GUI archive manager that Thunar uses for zip operations
   ];
 
   # Thunar custom actions for archive operations
   xdg.configFile."Thunar/uca.xml" = {
     force = true;
     text = ''
-    <?xml version="1.0" encoding="UTF-8"?>
-    <actions>
-      <action>
-        <icon>document-properties</icon>
-        <name>Extract Here</name>
-        <unique-id>extract-here</unique-id>
-        <description>Extract archive to current folder</description>
-        <patterns>*.zip;*.tar;*.tar.gz;*.tar.bz2;*.7z;*.rar</patterns>
-        <exec>xarchiver --extract-here %f</exec>
-        <conditions>
-          <condition compare-type="token" condition-type="mime-type">application/zip</condition>
-          <condition compare-type="token" condition-type="mime-type">application/x-tar</condition>
-          <condition compare-type="token" condition-type="mime-type">application/x-compressed-tar</condition>
-          <condition compare-type="token" condition-type="mime-type">application/x-bzip-compressed-tar</condition>
-          <condition compare-type="token" condition-type="mime-type">application/x-7z-compressed</condition>
-          <condition compare-type="token" condition-type="mime-type">application/x-rar</condition>
-        </conditions>
-      </action>
-      <action>
-        <icon>document-properties</icon>
-        <name>Compress...</name>
-        <unique-id>compress</unique-id>
-        <description>Compress selected files into an archive</description>
-        <exec>xarchiver --add %f</exec>
-        <conditions>
-          <condition compare-type="token" condition-type="file-type">regular</condition>
-          <condition compare-type="token" condition-type="file-type">directory</condition>
-        </conditions>
-      </action>
-    </actions>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <actions>
+        <action>
+          <icon>document-properties</icon>
+          <name>Extract Here</name>
+          <unique-id>extract-here</unique-id>
+          <description>Extract archive to current folder</description>
+          <patterns>*.zip;*.tar;*.tar.gz;*.tar.bz2;*.7z;*.rar</patterns>
+          <exec>xarchiver --extract-here %f</exec>
+          <conditions>
+            <condition compare-type="token" condition-type="mime-type">application/zip</condition>
+            <condition compare-type="token" condition-type="mime-type">application/x-tar</condition>
+            <condition compare-type="token" condition-type="mime-type">application/x-compressed-tar</condition>
+            <condition compare-type="token" condition-type="mime-type">application/x-bzip-compressed-tar</condition>
+            <condition compare-type="token" condition-type="mime-type">application/x-7z-compressed</condition>
+            <condition compare-type="token" condition-type="mime-type">application/x-rar</condition>
+          </conditions>
+        </action>
+        <action>
+          <icon>document-properties</icon>
+          <name>Compress...</name>
+          <unique-id>compress</unique-id>
+          <description>Compress selected files into an archive</description>
+          <exec>xarchiver --add %f</exec>
+          <conditions>
+            <condition compare-type="token" condition-type="file-type">regular</condition>
+            <condition compare-type="token" condition-type="file-type">directory</condition>
+          </conditions>
+        </action>
+      </actions>
     '';
   };
 
@@ -83,7 +83,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
   };
 
   # Ensure XDG directories exist

@@ -15,12 +15,16 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # millennium = {
+    #   url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    # };
+
     millennium = {
-      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+      url = "github:Izumemori/Millennium/79e9e963f545386c3c554047bb3e6058c616fe9d?dir=packages/nix";
     };
 
     zen-browser = {

@@ -56,7 +56,7 @@ in
     kitty
     krita
     lazygit
-    librewolf
+    # librewolf
     mako
     nautilus
     pkgs.atuin
@@ -132,6 +132,8 @@ in
     XDG_CURRENT_DESKTOP = "niri";
     DISPLAY = ":0";
   };
+
+  qt.platformTheme.name = "gtk3";
 
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
