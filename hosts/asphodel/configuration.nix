@@ -114,6 +114,7 @@
     equibop
     git
     gpu-screen-recorder-gtk
+    imv
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     krita
     mako
