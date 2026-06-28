@@ -54,7 +54,7 @@ if status is-interactive
     alias media="cd /media-pool"
     alias movies="cd /media-pool/movies/"
     alias tv="cd /media-pool/tv-series/"
-    alias wtf="ssh -t loon@osman.wtf; cd /media-pool; bash --login"
+    alias wtf="ssh -t troy@osman.wtf; cd /media-pool; bash --login"
     alias wtfcl="tv; cl; anime; cl; cd ~"
 
     # set fd aliases

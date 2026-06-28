@@ -93,6 +93,10 @@ in
     colorScheme = "catppuccin-mocha";
   };
   programs.starship.enable = true;
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+  };
   programs.yazi.enable = true;
   programs.yazi.shellWrapperName = "yy";
   programs.zoxide.enable = true;
