@@ -115,6 +115,7 @@
     git
     gpu-screen-recorder-gtk
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    just
     krita
     mako
     neovim
