@@ -120,6 +120,10 @@
     neovim
     # pkgs.firefoxpwa
     pkgs.stremio-linux-shell
+    pkgs.thunar
+    pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
+    pkgs.thunar-media-tags-plugin
+    pkgs.thunar-volman
     steam-run
     thunar-volman
     thunar-archive-plugin
@@ -134,7 +138,7 @@
   programs = {
     niri.enable = true;
     fish.enable = true;
-    thunar.enable = true;
+    # thunar.enable = true;
     xfconf.enable = true;
     gpu-screen-recorder.enable = true;
     firefox = {
