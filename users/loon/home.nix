@@ -21,6 +21,7 @@ in
   home.homeDirectory = "/home/loon";
 
   home.pointerCursor = {
+    enable = true;
     name = "Bibata-Modern-Ice";
     size = 22;
     package = pkgs.bibata-cursors;
