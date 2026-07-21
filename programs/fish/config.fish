@@ -42,7 +42,7 @@ if status is-interactive
     alias lt='eza -la --tree --git-ignore --icons=always --color=always'
     alias lls='ls'
 
-    # loon's aliases
+    # media server aliases
     alias abooks="cd /media-pool/audiobooks"
     alias amv="cd /media-pool/anime-movies"
     alias anime-movies="cd /media-pool/anime-movies/"
@@ -56,6 +56,12 @@ if status is-interactive
     alias tv="cd /media-pool/tv-series/"
     alias wtf="ssh -t troy@osman.wtf; cd /media-pool; bash --login"
     alias wtfcl="tv; cl; anime; cl; cd ~"
+
+    # nix shortcuts
+    alias switch="sudo nixos-rebuild switch --flake ~/styx#asphodel"
+    alias update="nix flake update"
+    alias clean="sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d"
+    alias gc="sudo nix-collect-garbage --delete-old"
 
     # set fd aliases
     alias find='fd'

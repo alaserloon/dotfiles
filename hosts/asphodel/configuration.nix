@@ -116,10 +116,11 @@
     gpu-screen-recorder-gtk
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     just
-    krita
     mako
     neovim
     # pkgs.firefoxpwa
+    pcsx2
+    pkgs._7zip-zstd
     pkgs.stremio-linux-shell
     pkgs.thunar
     pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
@@ -139,7 +140,6 @@
   programs = {
     niri.enable = true;
     fish.enable = true;
-    # thunar.enable = true;
     xfconf.enable = true;
     gpu-screen-recorder.enable = true;
     firefox = {
@@ -189,8 +189,14 @@
   # Cachix
   nix.settings.extra-substituters = [ "https://noctalia.cachix.org" ];
   nix.settings.extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
-  nix.settings.substituters = [ "https://cache.nixos-cuda.org" ];
-  nix.settings.trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+  nix.settings.substituters = [
+    "https://cache.nixos-cuda.org"
+    "https://nix-community.cachix.org"
+  ];
+  nix.settings.trusted-public-keys = [
+    "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
 
   system.stateVersion = "25.11";
 }

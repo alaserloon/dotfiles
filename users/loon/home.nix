@@ -57,7 +57,6 @@ in
     kitty
     krita
     lazygit
-    # librewolf
     mako
     nautilus
     pkgs.atuin
@@ -65,6 +64,7 @@ in
     pkgs.qbittorrent
     pkgs.vlc
     prismlauncher
+    retroarch-full
     ripgrep
     starship
     unzip
