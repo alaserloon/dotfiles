@@ -58,10 +58,10 @@ if status is-interactive
     alias wtfcl="tv; cl; anime; cl; cd ~"
 
     # nix shortcuts
-    alias switch="sudo nixos-rebuild switch --flake ~/styx#asphodel"
-    alias update="nix flake update"
-    alias clean="sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d"
-    alias gc="sudo nix-collect-garbage --delete-old"
+    alias upgrade='cd ~/styx; sudo nixos-rebuild switch --flake #asphodel'
+    alias update='cd ~/styx; nix flake update'
+    alias clean='sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d'
+    alias gc='sudo nix-collect-garbage --delete-old'
 
     # set fd aliases
     alias find='fd'

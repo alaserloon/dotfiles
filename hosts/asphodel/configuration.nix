@@ -31,6 +31,7 @@
   hardware = {
     enableAllFirmware = true;
     graphics.enable = true;
+    graphics.enable32Bit = true;
     graphics.extraPackages = with pkgs; [
       vulkan-loader
       vulkan-validation-layers
@@ -89,6 +90,10 @@
       autoStart = false; # Will need to start with `sunshine`
       capSysAdmin = true; # Needed on Wayland
       openFirewall = true;
+      package = pkgs.sunshine.override {
+        cudaSupport = true;
+        cudaPackages = pkgs.cudaPackages;
+      };
     };
   };
 
@@ -182,7 +187,7 @@
     options = [ "uid=1000" "gid=100" "umask=0077" ];
   };
 
-  nixpkgs.config.cudaSupport = true;
+  # nixpkgs.config.cudaSupport = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -192,6 +197,7 @@
   nix.settings.substituters = [
     "https://cache.nixos-cuda.org"
     "https://nix-community.cachix.org"
+    "https://cache.nixos.org/"
   ];
   nix.settings.trusted-public-keys = [
     "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="

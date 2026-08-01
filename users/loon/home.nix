@@ -35,8 +35,6 @@ in
     };
   };
 
-  wayland.windowManager.niri.enable = true;
-  wayland.windowManager.niri.package = pkgs.niri;
 
   home.packages = with pkgs; [
     alacritty
