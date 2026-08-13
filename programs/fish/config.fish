@@ -59,9 +59,14 @@ if status is-interactive
 
     # nix shortcuts
     alias upgrade='cd ~/styx; sudo nixos-rebuild switch --flake #asphodel'
+    alias rebuild='cd ~/styx; sudo nixos-rebuild switch --flake #asphodel'
     alias update='cd ~/styx; nix flake update'
+    aliad flake='cd ~/styx; nix flake update'
     alias clean='sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d'
     alias gc='sudo nix-collect-garbage --delete-old'
+
+    alias tvres='niri msg output DP-4 mode 2560x1440@143.973'
+    alias uwres='niri msg output DP-4 mode 3440x1440@164.900'
 
     # set fd aliases
     alias find='fd'

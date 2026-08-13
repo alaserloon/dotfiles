@@ -99,9 +99,11 @@
 
   security.rtkit.enable = true;
 
+  virtualisation.docker.enable = true;
+
   users.users.loon = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "bluetooth" ];
+    extraGroups = [ "networkmanager" "wheel" "bluetooth" "docker" ];
     shell = pkgs.bash;
   };
 
@@ -127,6 +129,7 @@
     pcsx2
     pkgs._7zip-zstd
     pkgs.stremio-linux-shell
+    pkgs.nexusmods-app
     pkgs.thunar
     pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
     pkgs.thunar-media-tags-plugin
@@ -188,6 +191,10 @@
   };
 
   # nixpkgs.config.cudaSupport = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "nexusmods-app-0.21.1"
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
