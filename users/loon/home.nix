@@ -105,7 +105,6 @@ in
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub fr.handbrake.ghb || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub net.lutris.Lutris || true
-    ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.nexusmods.vortex.desktop || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.usebottles.bottles || true
   '';
 
