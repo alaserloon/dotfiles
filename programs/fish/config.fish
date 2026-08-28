@@ -7,7 +7,7 @@ if status is-interactive
     zoxide init fish | source
     direnv hook fish | source
     atuin init fish | source
-    starship preset catppuccin-powerline -o ~/.config/starship.toml
+    starship preset catppuccin-powerline -o ~/.config/starship.toml --force
 
     # config PATH
     # homebrew apps should take precedence
