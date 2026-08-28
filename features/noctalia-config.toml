@@ -1,0 +1,673 @@
+settingsVersion = 59
+
+[audio]
+enable_sounds = true
+mprisBlacklist = []
+preferredPlayer = ""
+spectrumFrameRate = 30
+spectrumMirrored = true
+visualizerType = "linear"
+volumeFeedback = false
+volumeFeedbackSoundFile = ""
+volumeOverdrive = false
+volumeStep = 5
+
+[bar]
+autoHideDelay = 500
+autoShowDelay = 150
+backgroundOpacity = 0.93000000000000005
+barType = "simple"
+capsuleColorKey = "none"
+capsuleOpacity = 1
+contentPadding = 2
+density = "default"
+displayMode = "always_visible"
+enableExclusionZoneInset = true
+fontScale = 1
+frameRadius = 12
+frameThickness = 8
+hideOnOverview = false
+marginHorizontal = 4
+marginVertical = 4
+middleClickAction = "none"
+middleClickCommand = ""
+middleClickFollowMouse = false
+monitors = []
+mouseWheelAction = "none"
+mouseWheelWrap = true
+outerCorners = true
+position = "left"
+reverseScroll = false
+rightClickAction = "controlCenter"
+rightClickCommand = ""
+rightClickFollowMouse = true
+screenOverrides = []
+showCapsule = true
+showOnWorkspaceSwitch = true
+showOutline = false
+useSeparateOpacity = false
+widgetSpacing = 6
+
+    [bar.widgets]
+    background_opacity = 0.74999998323619366
+    center = [ "audio_visualizer", "workspaces", "audio_visualizer" ]
+    end = [
+        "tray",
+        "notifications",
+        "clipboard",
+        "recorder",
+        "network",
+        "bluetooth",
+        "volume",
+        "date",
+        "clock",
+        "control-center"
+    ]
+    margin_edge = 2
+    scale = 0.90000000000000002
+    start = [ "launcher", "nix-monitor", "cat", "temp", "ram", "wallpaper", "media" ]
+    thickness = 28
+
+        [[bar.widgets.left]]
+        colorizeSystemIcon = "none"
+        colorizeSystemText = "none"
+        customIconPath = ""
+        enableColorization = false
+        icon = "rocket"
+        iconColor = "none"
+        id = "Launcher"
+        useDistroLogo = false
+
+        [[bar.widgets.left]]
+        compactMode = true
+        diskPath = "/"
+        iconColor = "none"
+        id = "SystemMonitor"
+        showCpuCores = false
+        showCpuFreq = false
+        showCpuTemp = true
+        showCpuUsage = true
+        showDiskAvailable = false
+        showDiskUsage = false
+        showDiskUsageAsPercent = false
+        showGpuTemp = false
+        showLoadAverage = false
+        showMemoryAsPercent = false
+        showMemoryUsage = true
+        showNetworkStats = false
+        showSwapUsage = false
+        textColor = "none"
+        useMonospaceFont = true
+        usePadding = false
+
+        [[bar.widgets.left]]
+        colorizeIcons = false
+        hideMode = "hidden"
+        id = "ActiveWindow"
+        maxWidth = 145
+        scrollingMode = "hover"
+        showIcon = true
+        showText = true
+        textColor = "none"
+        useFixedWidth = false
+
+        [[bar.widgets.left]]
+        compactMode = false
+        hideMode = "hidden"
+        hideWhenIdle = false
+        id = "MediaMini"
+        maxWidth = 145
+        panelShowAlbumArt = true
+        scrollingMode = "hover"
+        showAlbumArt = true
+        showArtistFirst = true
+        showProgressRing = true
+        showVisualizer = false
+        textColor = "none"
+        useFixedWidth = false
+        visualizerType = "linear"
+
+        [[bar.widgets.right]]
+        blacklist = []
+        chevronColor = "none"
+        colorizeIcons = false
+        drawerEnabled = true
+        hidePassive = false
+        id = "Tray"
+        pinned = []
+
+        [[bar.widgets.right]]
+        hideWhenZero = false
+        hideWhenZeroUnread = false
+        iconColor = "none"
+        id = "NotificationHistory"
+        showUnreadBadge = true
+        unreadBadgeColor = "primary"
+
+        [[bar.widgets.right]]
+        iconColor = "none"
+        id = "WallpaperSelector"
+
+        [[bar.widgets.right]]
+        displayMode = "onhover"
+        iconColor = "none"
+        id = "Bluetooth"
+        textColor = "none"
+
+        [[bar.widgets.right]]
+        displayMode = "onhover"
+        iconColor = "none"
+        id = "Volume"
+        middleClickCommand = "pwvucontrol || pavucontrol"
+        textColor = "none"
+
+        [[bar.widgets.right]]
+        colorizeDistroLogo = false
+        colorizeSystemIcon = "none"
+        colorizeSystemText = "none"
+        customIconPath = ""
+        enableColorization = false
+        icon = "noctalia"
+        id = "ControlCenter"
+        useDistroLogo = false
+
+        [[bar.widgets.right]]
+        clockColor = "primary"
+        customFont = ""
+        formatHorizontal = "hh:mm AP ddd, MMM dd"
+        formatVertical = "hh mm AP - ddd -  MMM dd"
+        id = "Clock"
+        tooltipFormat = "hh:mm AP - ddd, MMM dd"
+        useCustomFont = false
+
+[brightness]
+backlightDeviceMappings = []
+brightnessStep = 5
+enableDdcSupport = false
+enforceMinimum = true
+
+[[calendar.cards]]
+enabled = true
+id = "calendar-header-card"
+
+[[calendar.cards]]
+enabled = true
+id = "calendar-month-card"
+
+[[calendar.cards]]
+enabled = true
+id = "weather-card"
+
+[colorSchemes]
+darkMode = true
+generationMethod = "tonal-spot"
+manualSunrise = "06:30"
+manualSunset = "18:30"
+monitorForColors = ""
+predefinedScheme = "Noctalia (default)"
+schedulingMode = "off"
+syncGsettings = true
+useWallpaperColors = true
+
+[desktopWidgets]
+enabled = false
+gridSnap = false
+gridSnapScale = false
+monitorWidgets = []
+overviewEnabled = true
+
+[dock]
+animationSpeed = 1
+auto_hide = true
+backgroundOpacity = 1
+colorizeIcons = false
+deadOpacity = 0.59999999999999998
+displayMode = "auto_hide"
+dockType = "floating"
+enabled = false
+floatingRatio = 1
+groupApps = false
+groupClickAction = "cycle"
+groupContextMenuMode = "extended"
+groupIndicatorStyle = "dots"
+icon_size = 32
+inactiveIndicators = false
+indicatorColor = "primary"
+indicatorOpacity = 0.59999999999999998
+indicatorThickness = 3
+launcherIcon = ""
+launcherIconColor = "none"
+launcherPosition = "end"
+launcherUseDistroLogo = false
+monitors = []
+onlySameOutput = true
+pinned = [ "kitty", "zen", "steam", "equibop", "spotify", "FFPWA-01KSRNJ4GQZHM7KDXXQXB18M7C", "fr.handbrake.ghb" ]
+pinnedApps = [
+    "kitty",
+    "librewolf",
+    "steam",
+    "equibop",
+    "com.spotify.Client",
+    "FFPWA-01KSRNJ4GQZHM7KDXXQXB18M7C",
+    "fr.handbrake.ghb"
+]
+pinnedStatic = false
+position = "bottom"
+reserve_space = false
+showDockIndicator = false
+showLauncherIcon = false
+sitOnFrame = false
+size = 1
+
+[general]
+allowPanelsOnScreenWithoutBar = true
+allowPasswordWithFprintd = false
+animationDisabled = false
+animationSpeed = 1
+autoStartAuth = false
+avatarImage = "/home/loon/.face"
+boxRadiusRatio = 1
+clockFormat = "hh\\nmm"
+clockStyle = "custom"
+compactLockScreen = false
+dimmerOpacity = 0.20000000000000001
+enableBlurBehind = true
+enableLockScreenCountdown = true
+enableLockScreenMediaControls = false
+enableShadows = true
+forceBlackScreenCorners = false
+iRadiusRatio = 1
+language = ""
+lockOnSuspend = true
+lockScreenAnimations = false
+lockScreenBlur = 0
+lockScreenCountdownDuration = 10000
+lockScreenMonitors = []
+lockScreenTint = 0
+passwordChars = false
+radiusRatio = 1
+reverseScroll = false
+scaleRatio = 1
+screenRadiusRatio = 1
+shadowDirection = "bottom_right"
+shadowOffsetX = 2
+shadowOffsetY = 3
+showChangelogOnStartup = true
+showHibernateOnLockScreen = false
+showScreenCorners = false
+showSessionButtonsOnLockScreen = true
+smoothScrollEnabled = true
+telemetryEnabled = true
+
+    [general.keybinds]
+    keyDown = [ "Down" ]
+    keyEnter = [ "Return", "Enter" ]
+    keyEscape = [ "Esc" ]
+    keyLeft = [ "Left" ]
+    keyRemove = [ "Del" ]
+    keyRight = [ "Right" ]
+    keyUp = [ "Up" ]
+
+[hooks]
+colorGeneration = ""
+darkModeChange = ""
+enabled = false
+performanceModeDisabled = ""
+performanceModeEnabled = ""
+screenLock = ""
+screenUnlock = ""
+session = ""
+startup = ""
+wallpaperChange = ""
+
+[idle]
+customCommands = "[]"
+enabled = false
+fadeDuration = 5
+lockCommand = ""
+lockTimeout = 660
+resumeLockCommand = ""
+resumeScreenOffCommand = ""
+resumeSuspendCommand = ""
+screenOffCommand = ""
+screenOffTimeout = 600
+suspendCommand = ""
+suspendTimeout = 1800
+
+[location]
+address = "Apple Valley, MN"
+analogClockInCalendar = false
+autoLocate = false
+firstDayOfWeek = -1
+hideWeatherCityName = false
+hideWeatherTimezone = false
+name = "Apple Valley, Minnesota"
+showCalendarEvents = true
+showCalendarWeather = true
+showWeekNumberInCalendar = false
+use12hourFormat = false
+useFahrenheit = true
+weatherEnabled = true
+weatherShowEffects = true
+weatherTaliaMascotAlways = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "lockscreen-login-box@DP-4", "lockscreen-login-box@DP-5" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-4"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1720.0
+    cy = 1317.0
+    output = "DP-4"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-4".settings]
+        center_password_text = false
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 720.0
+    cy = 2437.0
+    output = "DP-5"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
+        center_password_text = false
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[network]
+bluetoothAutoConnect = false
+bluetoothDetailsViewMode = "grid"
+bluetoothHideUnnamedDevices = false
+bluetoothRssiPollIntervalMs = 60000
+bluetoothRssiPollingEnabled = false
+disableDiscoverability = false
+networkPanelView = "wifi"
+wifiDetailsViewMode = "grid"
+
+[nightLight]
+autoSchedule = true
+dayTemp = "6500"
+enabled = false
+forced = false
+manualSunrise = "06:30"
+manualSunset = "18:30"
+nightTemp = "4000"
+
+[noctaliaPerformance]
+disableDesktopWidgets = true
+disableWallpaper = true
+
+[notification]
+scale = 0.7500000037252903
+
+[notifications]
+backgroundOpacity = 1
+clearDismissed = true
+criticalUrgencyDuration = 15
+density = "default"
+enableBatteryToast = true
+enableKeyboardLayoutToast = true
+enableMarkdown = false
+enableMediaToast = false
+enabled = true
+location = "top_right"
+lowUrgencyDuration = 3
+monitors = []
+normalUrgencyDuration = 8
+overlayLayer = true
+respectExpireTimeout = false
+
+    [notifications.saveToHistory]
+    critical = true
+    low = true
+    normal = true
+
+    [notifications.sounds]
+    criticalSoundFile = ""
+    enabled = false
+    excludedApps = "discord,firefox,chrome,chromium,edge"
+    lowSoundFile = ""
+    normalSoundFile = ""
+    separateSounds = false
+    volume = 0.5
+
+[osd]
+autoHideMs = 2000
+backgroundOpacity = 1
+enabled = true
+enabledTypes = [ 0, 1, 2 ]
+location = "top_right"
+monitors = []
+overlayLayer = true
+
+[plugin_settings."avivbintangaringga/nix-monitor"]
+update_command = "nixos-rebuild switch --flake ~/styx#asphodel"
+
+[plugin_settings."noctalia/screen_recorder"]
+color_range = "full"
+replay_duration = 60
+replay_enabled = true
+replay_storage = "disk"
+video_source = "focused"
+
+[plugins]
+autoUpdate = false
+enabled = [ "noctalia/screen_recorder", "avivbintangaringga/nix-monitor", "imjustdoingmypart/niri-animations", "dotnetrob/cat" ]
+notifyUpdates = true
+
+[sessionMenu]
+countdownDuration = 10000
+enableCountdown = true
+largeButtonsLayout = "single-row"
+largeButtonsStyle = true
+position = "center"
+showHeader = true
+showKeybinds = true
+
+    [[sessionMenu.powerOptions]]
+    action = "lock"
+    enabled = true
+    keybind = "1"
+
+    [[sessionMenu.powerOptions]]
+    action = "suspend"
+    enabled = true
+    keybind = "2"
+
+    [[sessionMenu.powerOptions]]
+    action = "hibernate"
+    enabled = true
+    keybind = "3"
+
+    [[sessionMenu.powerOptions]]
+    action = "reboot"
+    enabled = true
+    keybind = "4"
+
+    [[sessionMenu.powerOptions]]
+    action = "logout"
+    enabled = true
+    keybind = "5"
+
+    [[sessionMenu.powerOptions]]
+    action = "shutdown"
+    enabled = true
+    keybind = "6"
+
+    [[sessionMenu.powerOptions]]
+    action = "rebootToUefi"
+    enabled = true
+    keybind = "7"
+
+[shell]
+avatar_path = "/home/loon/Pictures/Avatars/rem-token-square.png"
+font_family = "JetBrainsMono Nerd Font"
+lang = "en"
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+settings_show_advanced = false
+telemetry_enabled = true
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.panel]
+    transparency_mode = "soft"
+
+[systemMonitor]
+batteryCriticalThreshold = 5
+batteryWarningThreshold = 20
+cpuCriticalThreshold = 90
+cpuWarningThreshold = 80
+criticalColor = ""
+diskAvailCriticalThreshold = 10
+diskAvailWarningThreshold = 20
+diskCriticalThreshold = 90
+diskWarningThreshold = 80
+enableDgpuMonitoring = false
+externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor"
+gpuCriticalThreshold = 90
+gpuWarningThreshold = 80
+memCriticalThreshold = 90
+memWarningThreshold = 80
+swapCriticalThreshold = 90
+swapWarningThreshold = 80
+tempCriticalThreshold = 90
+tempWarningThreshold = 80
+useCustomColors = false
+warningColor = ""
+
+[templates]
+activeTemplates = []
+enableUserTheming = false
+
+[theme]
+builtin = "m3-tonal-spot"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "helix", "kitty", "niri", "qt", "starship" ]
+    community_ids = [ "spicetify", "zen-browser", "neovim", "fuzzel", "discord", "steam", "yazi" ]
+
+[ui]
+boxBorderEnabled = false
+fontDefault = "Sans Serif"
+fontDefaultScale = 1
+fontFixed = "monospace"
+fontFixedScale = 1
+panelBackgroundOpacity = 0.93000000000000005
+panelsAttachedToBar = true
+scrollbarAlwaysVisible = true
+settingsPanelMode = "attached"
+settingsPanelSideBarCardStyle = false
+tooltipsEnabled = true
+translucentWidgets = false
+
+[wallpaper]
+directory = "/home/loon/Pictures/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.automation]
+    interval_minutes = 15
+
+    [wallpaper.default]
+    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+
+    [wallpaper.last]
+    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+
+    [wallpaper.monitors.DP-4]
+    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+
+    [wallpaper.monitors.DP-5]
+    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-tonal-spot"
+
+[weather]
+address = "Apple Valley, MN"
+unit = "imperial"
+
+[widget.bongocat]
+color = "tertiary"
+script = "scripts/bongocat.lua"
+type = "scripted"
+
+[widget.cat]
+type = "dotnetrob/cat:cat"
+
+[widget.clock]
+format = "{:%I:%M%p}"
+
+[widget.control-center]
+color = "primary"
+custom_image = "/home/loon/styx/features/assets/nix-snowflake-white.svg"
+
+[widget.launcher]
+color = "primary"
+glyph = "rocket"
+
+[widget.media]
+artist_first = true
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.nix-monitor]
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.sysmon]
+stat = "gpu_usage"
+
+[widget.tray]
+drawer = false
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+pill_scale = 0.5
+show_labels = false
