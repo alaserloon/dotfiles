@@ -232,6 +232,12 @@
         "shift+Print" = {
           "screenshot-window" = [ ];
         };
+        "Mod+Print" = {
+          "spawn-sh" = "noctalia msg plugin noctalia/screen_recorder:service all replay-save";
+        };
+        "Mod+Shift+Print" = {
+          "spawn-sh" = "noctalia msg plugin noctalia/screen_recorder:service all replay-toggle";
+        };
 
         # Navigation - Columns
         "Mod+Left" = {

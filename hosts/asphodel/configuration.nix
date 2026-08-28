@@ -71,13 +71,11 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    greetd = {
+    displayManager.noctalia-greeter = {
       enable = true;
       settings = {
-        default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-          user = "loon";
-        };
+        session.default = "niri";
+        user.default = "loon";
       };
     };
     power-profiles-daemon.enable = true;
@@ -125,14 +123,13 @@
     just
     mako
     neovim
-    # pkgs.firefoxpwa
-    pcsx2
     pkgs._7zip-zstd
     pkgs.stremio-linux-shell
     pkgs.thunar
     pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
     pkgs.thunar-media-tags-plugin
     pkgs.thunar-volman
+    protonup-qt
     steam-run
     thunar-volman
     thunar-archive-plugin
@@ -152,7 +149,6 @@
     firefox = {
       enable = true;
       package = pkgs.firefox;
-      # nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
     };
     steam = {
       enable = true;
@@ -166,7 +162,6 @@
   nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
   environment.variables = {
-    DISPLAY = ":0";
     XDG_SESSION_TYPE = "wayland";
     XDG_CURRENT_DESKTOP = "niri";
     QT_QPA_PLATFORM = "wayland";

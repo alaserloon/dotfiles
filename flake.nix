@@ -19,13 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # millennium = {
-    #   url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    # };
-
     millennium = {
-      url = "github:Izumemori/Millennium/79e9e963f545386c3c554047bb3e6058c616fe9d?dir=packages/nix";
+      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     };
+
+    # millennium = {
+    #   url = "github:Izumemori/Millennium/79e9e963f545386c3c554047bb3e6058c616fe9d?dir=packages/nix";
+    # };
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
