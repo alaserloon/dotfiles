@@ -65,15 +65,15 @@ You can ignore the filesystems, these are personal and left here as examples
 
 *Important* 
 
--- Copy your generated hardware-configuration.nix to ~/styx/hosts/asphodel/ overwriting the existing one.
+-- Copy your generated hardware-configuration.nix to ~/styx/hosts/styx/ overwriting the existing one.
 
-```cp /etc/nixos/hardware-configuration.nix ~/styx/hosts/asphodel/```
+```cp /etc/nixos/hardware-configuration.nix ~/styx/hosts/styx/```
 
-```nixos-rebuild switch --flake ~/styx#asphodel```
+```nixos-rebuild switch --flake ~/styx#styx```
 
-*Tip* - You can use the following command to find and replace all instances of ``asphodel`` (hostname) and ``loon`` (username) with your own using the following commands.
+*Tip* - You can use the following command to find and replace all instances of ``styx`` (hostname) and ``loon`` (username) with your own using the following commands.
 
-```find . -name "*.nix" -exec sed -i 's/asphodel/yourhostnamehere/g' {} \;```
+```find . -name "*.nix" -exec sed -i 's/styx/yourhostnamehere/g' {} \;```
 
 ```find . -name "*.nix" -exec sed -i 's/loon/yourusernamehere/g' {} \;```
 
