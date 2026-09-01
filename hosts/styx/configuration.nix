@@ -9,7 +9,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
 
-  networking.hostName = "asphodel";
+  networking.hostName = "styx";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";

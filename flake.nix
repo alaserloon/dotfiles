@@ -23,10 +23,6 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     };
 
-    # millennium = {
-    #   url = "github:Izumemori/Millennium/79e9e963f545386c3c554047bb3e6058c616fe9d?dir=packages/nix";
-    # };
-
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,10 +46,10 @@
     , spicetify-nix
     }:
     {
-      nixosConfigurations.asphodel = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.styx = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/asphodel/configuration.nix
+          ./hosts/styx/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hm-bak";

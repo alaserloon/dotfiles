@@ -472,7 +472,7 @@ monitors = []
 overlayLayer = true
 
 [plugin_settings."avivbintangaringga/nix-monitor"]
-update_command = "nixos-rebuild switch --flake ~/styx#asphodel"
+update_command = "nixos-rebuild switch --flake ~/styx#styx"
 
 [plugin_settings."noctalia/screen_recorder"]
 color_range = "full"
