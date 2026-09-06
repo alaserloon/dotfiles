@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Pinned to xwayland-satellite 0.8.1,
+    # to work around https://github.com/ValveSoftware/steam-for-linux/issues/13566
+    # (Steam dropdown/friends-list menus dismissing instantly)
+    nixpkgs-xwsat-pin.url = "github:nixos/nixpkgs/567a49d1913ce81ac6e9582e3553dd90a955875f";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +43,7 @@
   outputs =
     inputs@{ self
     , nixpkgs
+    , nixpkgs-xwsat-pin #pin
     , home-manager
     , niri-nix
     , noctalia
@@ -49,6 +55,16 @@
       nixosConfigurations.styx = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          #pin
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                xwayland-satellite =
+                  (import nixpkgs-xwsat-pin { inherit (prev) system; }).xwayland-satellite;
+              })
+            ];
+          }
+          #end-pin
           ./hosts/styx/configuration.nix
           home-manager.nixosModules.home-manager
           {

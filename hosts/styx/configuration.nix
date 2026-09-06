@@ -131,6 +131,7 @@
     pkgs.thunar-media-tags-plugin
     pkgs.thunar-volman
     protonup-qt
+    pulseaudio
     steam-run
     thunar-volman
     thunar-archive-plugin
