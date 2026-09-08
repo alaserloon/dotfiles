@@ -115,6 +115,7 @@
     bluez
     cudatoolkit
     curl
+    ffmpeg
     fuzzel
     equibop
     git
