@@ -118,7 +118,7 @@
         }
         {
           match = {
-            _props.app-id = "zen";
+            _props.app-id = "zen-beta";
           };
           default-column-width = {
             proportion = 0.75;
@@ -145,7 +145,7 @@
         #   _args = [ "librewolf" ];
         # }
         {
-          _args = [ "zen" ];
+          _args = [ "zen-beta" ];
         }
       ];
 
