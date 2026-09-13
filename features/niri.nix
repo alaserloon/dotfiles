@@ -202,7 +202,7 @@
         };
         "Mod+w" = {
           _props.hotkey-overlay-title = "Open Web Browser";
-          spawn = "zen";
+          spawn = "zen-beta";
         };
         "Mod+Return" = {
           _props.hotkey-overlay-title = "Open Terminal";

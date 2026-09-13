@@ -66,6 +66,7 @@ in
     ripgrep
     starship
     unzip
+    tigervnc
     yazi
     zoxide
   ];
@@ -106,6 +107,8 @@ in
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub net.lutris.Lutris || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.usebottles.bottles || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y https://chrisdkn.github.io/Amethyst-Mod-Manager/amethyst.flatpakref || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub io.github.Faugus.faugus-launcher || true
   '';
 
   xdg.portal = {
@@ -122,6 +125,17 @@ in
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
       };
       common.default = [ "gtk" ];
+    };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "zen-beta.desktop";
+      "x-scheme-handler/http" = "zen-beta.desktop";
+      "x-scheme-handler/https" = "zen-beta.desktop";
+      "x-scheme-handler/about" = "zen-beta.desktop";
+      "x-scheme-handler/unknown" = "zen-beta.desktop";
     };
   };
 
