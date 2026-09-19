@@ -91,6 +91,7 @@ in
       obs-pipewire-audio-capture
       obs-gstreamer
       obs-vkcapture
+      obs-websocket
     ];
   };
   programs.ripgrep.enable = true;
@@ -124,6 +125,7 @@ in
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.usebottles.bottles || true
     ${pkgs.flatpak}/bin/flatpak install --user -y https://chrisdkn.github.io/Amethyst-Mod-Manager/amethyst.flatpakref || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub io.github.Faugus.faugus-launcher || true
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.streamlabs.StreamlabsDesktop || true
   '';
 
   xdg.portal = {
@@ -145,12 +147,21 @@ in
 
   xdg.mimeApps = {
     enable = true;
+    associations.added = {
+      "application/pdf" = [ "zen-beta-desktop" ];
+    };
     defaultApplications = {
-      "text/html" = "zen-beta.desktop";
-      "x-scheme-handler/http" = "zen-beta.desktop";
-      "x-scheme-handler/https" = "zen-beta.desktop";
-      "x-scheme-handler/about" = "zen-beta.desktop";
-      "x-scheme-handler/unknown" = "zen-beta.desktop";
+      "application/pdf" = [ "zen-beta.desktop" ];
+      "text/html" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/about" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/unknown" = [ "zen-beta.desktop" ];
+      "image/png" = [ "imv-dir.desktop" ];
+      "image/jpeg" = [ "imv-dir.desktop" ];
+      "image/*" = [ "imv-dir.desktop" ];
+      "video/mp4" = [ "vlc.desktop" ];
+      "video/*" = [ "vlc.desktop" ];
     };
   };
 

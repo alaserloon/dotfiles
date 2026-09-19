@@ -11,6 +11,7 @@
 
   networking.hostName = "styx";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 4455 ]; #obs-websocket
 
   time.timeZone = "America/Chicago";
 
