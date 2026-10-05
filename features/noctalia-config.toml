@@ -50,22 +50,32 @@ widgetSpacing = 6
 
     [bar.widgets]
     background_opacity = 0.74999998323619366
-    center = [ "audio_visualizer", "workspaces", "audio_visualizer" ]
+    center = [ "audio_visualizer", "spacer_9", "active_window", "spacer_10", "audio_visualizer" ]
     end = [
+        "weather",
+        "spacer_5",
+        "date",
+        "spacer_12",
         "tray",
         "notifications",
+        "wallpaper",
         "clipboard",
+        "spacer_7",
+        "bar",
         "recorder",
-        "network",
         "bluetooth",
+        "network",
+        "spacer_6",
+        "widget",
         "volume",
-        "date",
+        "spacer_11",
         "clock",
+        "spacer_4",
         "control-center"
     ]
     margin_edge = 2
     scale = 0.90000000000000002
-    start = [ "launcher", "nix-monitor", "cat", "temp", "ram", "wallpaper", "media" ]
+    start = [ "nix_monitor_2", "spacer_8", "workspaces", "taskbar", "spacer_2", "cat", "spacer_3", "cpu", "temp", "ram" ]
     thickness = 28
 
         [[bar.widgets.left]]
@@ -186,17 +196,24 @@ brightnessStep = 5
 enableDdcSupport = false
 enforceMinimum = true
 
-[[calendar.cards]]
+[calendar]
 enabled = true
-id = "calendar-header-card"
 
-[[calendar.cards]]
-enabled = true
-id = "calendar-month-card"
+    [calendar.account.wtosman]
+    name = "Troy's Calendar"
+    type = "google"
 
-[[calendar.cards]]
-enabled = true
-id = "weather-card"
+    [[calendar.cards]]
+    enabled = true
+    id = "calendar-header-card"
+
+    [[calendar.cards]]
+    enabled = true
+    id = "calendar-month-card"
+
+    [[calendar.cards]]
+    enabled = true
+    id = "weather-card"
 
 [colorSchemes]
 darkMode = true
@@ -472,9 +489,13 @@ monitors = []
 overlayLayer = true
 
 [plugin_settings."avivbintangaringga/nix-monitor"]
-update_command = "nixos-rebuild switch --flake ~/styx#styx"
+update_command = "cd ~/styx; nix flake update"
+
+[plugin_settings."blackbartblues/audio-switcher"]
+show_percentage = false
 
 [plugin_settings."noctalia/screen_recorder"]
+audio_source = "both"
 color_range = "full"
 replay_duration = 60
 replay_enabled = true
@@ -483,7 +504,15 @@ video_source = "focused"
 
 [plugins]
 autoUpdate = false
-enabled = [ "noctalia/screen_recorder", "avivbintangaringga/nix-monitor", "imjustdoingmypart/niri-animations", "dotnetrob/cat" ]
+enabled = [
+    "noctalia/screen_recorder",
+    "avivbintangaringga/nix-monitor",
+    "imjustdoingmypart/niri-animations",
+    "dotnetrob/cat",
+    "blackbartblues/audio-switcher",
+    "raycursive/niri-displays",
+    "ayagmar/obs-control"
+]
 notifyUpdates = true
 
 [sessionMenu]
@@ -531,16 +560,27 @@ showKeybinds = true
     keybind = "7"
 
 [shell]
-avatar_path = "/home/loon/Pictures/Avatars/rem-token-square.png"
+avatar_path = "/home/loon/Pictures/Avatars/ein2.png"
 font_family = "JetBrainsMono Nerd Font"
 lang = "en"
 niri_overview_type_to_launch_enabled = true
 polkit_agent = true
-settings_show_advanced = false
+settings_show_advanced = true
 telemetry_enabled = true
 
     [shell.greeter_sync]
-    auto_sync = true
+    auto_sync = false
+
+    [shell.launcher]
+    pinned = [
+        "steam",
+        "equibop",
+        "net.lutris.battlenet-3",
+        "fr.handbrake.ghb",
+        "spotify",
+        "zen-beta",
+        "com.obsproject.Studio"
+    ]
 
     [shell.panel]
     transparency_mode = "soft"
@@ -580,7 +620,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "helix", "kitty", "niri", "qt", "starship" ]
-    community_ids = [ "spicetify", "zen-browser", "neovim", "fuzzel", "discord", "steam", "yazi" ]
+    community_ids = [ "spicetify", "zen-browser", "discord", "neovim", "prismlauncher", "steam", "fuzzel", "yazi" ]
 
 [ui]
 boxBorderEnabled = false
@@ -604,13 +644,13 @@ transition_on_startup = true
     interval_minutes = 15
 
     [wallpaper.default]
-    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+    path = "/home/loon/Pictures/Wallpapers/zelda-princess-of-dreams-by-estellier.png"
 
     [wallpaper.last]
-    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+    path = "/home/loon/Pictures/Wallpapers/zelda-princess-of-dreams-by-estellier.png"
 
     [wallpaper.monitors.DP-4]
-    path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
+    path = "/home/loon/Pictures/Wallpapers/zelda-princess-of-dreams-by-estellier.png"
 
     [wallpaper.monitors.DP-5]
     path = "/home/loon/Pictures/Wallpapers/frieren-beyond-journeys-end-flower-field.png"
@@ -621,9 +661,43 @@ transition_on_startup = true
     theme_mode = "dark"
     wallpaper_scheme = "m3-tonal-spot"
 
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/loon/Pictures/Wallpapers/rick-and-morty.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-tonal-spot"
+
+    [[wallpaper.favorite]]
+    path = "/home/loon/Pictures/Wallpapers/cowboy-bebop-swordfish-ii-on-a-sunny-winter-morning-oliver-wetter.png"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/loon/Pictures/Wallpapers/neon-genesis-evangelion-eva-01.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-tonal-spot"
+
+    [[wallpaper.favorite]]
+    path = "/home/loon/Pictures/Wallpapers/transistor2.png"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    path = "/home/loon/Pictures/Wallpapers/zelda-forest-temple-jeremy-fenske.png"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/loon/Pictures/Wallpapers/zelda-princess-of-dreams-by-estellier.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-tonal-spot"
+
 [weather]
 address = "Apple Valley, MN"
 unit = "imperial"
+
+[widget.bar]
+show_resolution = false
+type = "raycursive/niri-displays:bar"
 
 [widget.bongocat]
 color = "tertiary"
@@ -656,17 +730,61 @@ show_label = false
 show_text = false
 type = "avivbintangaringga/nix-monitor:nix-monitor"
 
+[widget.nix_monitor_2]
+colorize_glyph = false
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
+
+[widget.spacer_10]
+type = "spacer"
+
+[widget.spacer_11]
+type = "spacer"
+
+[widget.spacer_12]
+length = 200
+type = "spacer"
+
+[widget.spacer_2]
+length = 400
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.spacer_5]
+type = "spacer"
+
+[widget.spacer_6]
+type = "spacer"
+
+[widget.spacer_7]
+type = "spacer"
+
+[widget.spacer_8]
+length = 30
+type = "spacer"
+
+[widget.spacer_9]
+type = "spacer"
 
 [widget.sysmon]
 stat = "gpu_usage"
 
 [widget.tray]
-drawer = false
+drawer = true
 
 [widget.volume]
-show_label = false
+show_label = true
+
+[widget.widget]
+type = "blackbartblues/audio-switcher:widget"
 
 [widget.workspaces]
 pill_scale = 0.5
