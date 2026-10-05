@@ -118,6 +118,7 @@
     ffmpeg
     fuzzel
     equibop
+    gamescope
     git
     gpu-screen-recorder-gtk
     imv

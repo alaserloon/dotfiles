@@ -8,6 +8,7 @@ in
 
   imports = [
     ../../features/niri.nix
+    ../../features/umbriel/umbriel.nix
     ../../features/noctalia.nix
     ../../features/thunar.nix
     ../../programs/kitty.nix

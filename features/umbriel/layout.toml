@@ -1,0 +1,16 @@
+[layout]
+mode = "scrolling"
+gap = 10
+extent_presets = [0.333, 0.5, 0.667]
+new_exits_fullscreen = []  # "tiled", "floating", "pinned", "all", or an array such as ["tiled", "floating"]
+
+[layout.struts]
+left = 0
+right = 0
+top = 0
+bottom = 0
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+center_underfull_strip = true
+center_focused = "always"

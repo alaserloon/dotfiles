@@ -1,0 +1,79 @@
+[colors]
+background = "#141419FF"
+text_primary = "#E8E8EAFF"
+text_muted = "#8A8A92FF"
+accent_primary = "#7AA3FFFF"
+accent_secondary = "#F5C96BFF"
+warning = "#F5C96BFF"
+error = "#FF6B6BFF"
+insert_hint = "#7FC8FF80"
+backdrop = "#000000FF"
+shadow = "#0000007F"
+
+[colors.border]
+focused = "#7AA3FFFF"
+unfocused = "#292933FF"
+outer = "#1A1A1FFF"
+
+[colors.overview]
+background_tint = "#10101430"
+workspace_background = "#00000044"
+badge = "#7AA3FFFF"
+
+[colors.tab_bar]
+background = "#1A1A1FFF"
+text = "#8A8A92FF"
+active = "#7AA3FFFF"
+active_text = "#141419FF"
+active_unfocused = "#292933FF"
+active_unfocused_text = "#E8E8EAFF"
+urgent = "#FF6B6BFF"
+urgent_text = "#141419FF"
+
+[appearance]
+prefer_no_csd = true
+border_width = 2
+outer_border_width = 0
+corner_radius = 10
+drag_opacity = 0.75
+opaque_fullscreen = true
+
+[appearance.tab_bar]
+style = "titles"
+position = "top"
+height = 24
+font = "sans 10"
+padding = 8
+tab_gap = 2
+corner_radius = -1
+title_format = "{title}"
+title_align = "center"
+visible = true
+hide_when_single = false
+max_tabs = 0
+overflow = "scroll"
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3
+radius = 5
+noise = 0.02
+brightness = 0.9
+contrast = 0.9
+saturation = 1.1
+
+[appearance.shadow]
+enabled = true
+softness = 10
+offset_x = 2
+offset_y = 2
+
+[overview]
+zoom = 0.5
+scroll_factor_horizontal = 1.0
+scroll_factor_vertical = 1.0
+background_blur = true
+workspace_wallpaper = true
+shortcuts = true
+shortcut_keys = "1234567890"
