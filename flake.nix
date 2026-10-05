@@ -66,7 +66,6 @@
             home-manager.users.loon = import ./users/loon/home.nix;
             home-manager.sharedModules = [
               niri-nix.homeModules.default
-              umbriel.homeModules.default
               spicetify-nix.homeManagerModules.default
             ];
           }

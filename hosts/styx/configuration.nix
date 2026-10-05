@@ -75,7 +75,7 @@
     displayManager.noctalia-greeter = {
       enable = true;
       settings = {
-        session.default = "niri";
+        session.default = [ "umbriel" ];
         user.default = "loon";
       };
     };
@@ -148,6 +148,7 @@
 
   programs = {
     niri.enable = true;
+    umbriel.enable = true;
     fish.enable = true;
     xfconf.enable = true;
     gpu-screen-recorder.enable = true;

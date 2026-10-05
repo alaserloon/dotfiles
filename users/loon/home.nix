@@ -119,7 +119,6 @@ in
   programs.zoxide.enable = true;
 
   home.activation.flatpakSetup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub fr.handbrake.ghb || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub org.vinegarhq.Sober || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub net.lutris.Lutris || true
@@ -128,6 +127,8 @@ in
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub io.github.Faugus.faugus-launcher || true
     ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.streamlabs.StreamlabsDesktop || true
   '';
+
+  # ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
   xdg.portal = {
     enable = true;
@@ -173,6 +174,7 @@ in
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
     XDG_CURRENT_DESKTOP = "niri";
     DISPLAY = ":0";

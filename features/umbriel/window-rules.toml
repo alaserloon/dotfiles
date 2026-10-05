@@ -21,7 +21,7 @@ vrr = "always"
 
 [[window_rule]]
 default_position = { x = 10, y=10, anchor = "bottom_right" }
-match.title = "^notificationtoasts_\d+_desktop$"
+match.title = "^notificationtoasts_\\d+_desktop$"
 default_focused = false
 
 

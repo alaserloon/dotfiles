@@ -1,11 +1,11 @@
 [include]
 files = [
-"./outputs.toml",
-"./inputs.toml",
-"./keybinds.toml",
-"./layout.toml",
-"./window-rules.toml",
-"./appearance.toml"    
+"outputs.toml",
+"inputs.toml",
+"keybinds.toml",
+"layout.toml",
+"window-rules.toml",
+"appearance.toml"    
 ]
 
 [include.optional]
@@ -15,7 +15,7 @@ files = []
 [general]
 autostart = ["noctalia", "zen-beta"]
 mod_key = "Super"
-xwayland = false
+xwayland = true
 xwayland_native_resolution = false
 show_cheatsheet = false
 focus_on_activate = true
