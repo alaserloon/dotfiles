@@ -3,6 +3,6 @@
 
   programs.noctalia = {
     enable = true;
-    settings = builtins.fromTOML (builtins.readFile ./noctalia-config.toml);
+    settings = builtins.fromTOML (builtins.readFile ./config.toml);
   };
 }

@@ -14,7 +14,7 @@
     ../../shell/fish
     ../../shell/helix
     ../../shell/zellij
-    ../../programs/noctalia/noctalia.nix
+    ../../programs/noctalia
     ../../programs/thunar/home.nix
     ../../programs/obs.nix
     ../../programs/spicetify.nix
