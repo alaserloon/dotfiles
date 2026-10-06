@@ -70,7 +70,7 @@
           {
             home-manager.backupFileExtension = "hm-bak";
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.loon = import ./users/loon/home.nix;
+            home-manager.users.loon = import ./users/loon/default.nix;
             home-manager.sharedModules = [
               niri-nix.homeModules.default
               spicetify-nix.homeManagerModules.default
