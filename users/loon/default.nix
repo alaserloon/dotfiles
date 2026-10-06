@@ -9,15 +9,15 @@
     ./session.nix
     ../../desktop/niri.nix
     ../../desktop/umbriel/umbriel.nix
-    ../../desktop/noctalia.nix
-    ../../desktop/thunar.nix
     ../../shell/kitty.nix
     ../../shell/bash.nix
     ../../shell/fish
     ../../shell/helix
     ../../shell/zellij
-    ../../programs/spictify.nix
+    ../../programs/noctalia
     ../../programs/obs.nix
+    ../../programs/spicetify.nix
+    ../../programs/thunar.nix
   ];
 
   home.username = "loon";
