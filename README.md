@@ -1,8 +1,6 @@
-Styx is a baseline setup for NixOS with Niri as the desktop environment and Noctalia shell.
+Styx is a baseline setup for NixOS with Umbriel as the desktop environment and Noctalia shell.
 
 Styx is a personal-use project that includes a host of gaming applications, a few art and music applications, and encoding software.
-
-![](https://files.catbox.moe/xt94z6.png)
 ![](https://files.catbox.moe/qzum7b.png)
 Wallpaper Artist: Poupée [@capo_sung](https://linktr.ee/capo_sung) - Wallpaper [Link](https://files.catbox.moe/h41he5.png)
 
