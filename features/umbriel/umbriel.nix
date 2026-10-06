@@ -11,12 +11,11 @@
   };
 
   xdg.configFile = {
-    "umbriel/outputs.toml".source = ./outputs.toml;
-    "umbriel/inputs.toml".source = ./inputs.toml;
-    "umbriel/keybinds.toml".source = ./keybinds.toml;
-    "umbriel/layout.toml".source = ./layout.toml;
-    "umbriel/window-rules.toml".source = ./window-rules.toml;
-    "umbriel/appearance.toml".source = ./appearance.toml;
+    "umbriel/outputs.toml" = { source = ./outputs.toml; force = true; };
+    "umbriel/inputs.toml" = { source = ./inputs.toml; force = true; };
+    "umbriel/keybinds.toml" = { source = ./keybinds.toml; force = true; };
+    "umbriel/layout.toml" = { source = ./layout.toml; force = true; };
+    "umbriel/appearance.toml" = { source = ./appearance.toml; force = true; };
+    "umbriel/window-rules.toml" = { source = ./window-rules.toml; force = true; };
   };
-
 }

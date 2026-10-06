@@ -10,6 +10,6 @@ top = 0
 bottom = 0
 
 [layout.scrolling]
-default_extent_fraction = 0.80
+default_extent_fraction = 0.75
 center_underfull_strip = true
 center_focused = "always"
