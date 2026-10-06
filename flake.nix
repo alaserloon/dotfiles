@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     umbriel = {
       url = "github:noctalia-dev/umbriel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +54,7 @@
     , home-manager
     , niri-nix
     , noctalia
+    , noctalia-greeter
     , umbriel
     , millennium
     , zen-browser
@@ -60,6 +66,7 @@
         modules = [
           ./hosts/styx/configuration.nix
           home-manager.nixosModules.home-manager
+          noctalia.nixosModules.default
           {
             home-manager.backupFileExtension = "hm-bak";
             home-manager.extraSpecialArgs = { inherit inputs; };

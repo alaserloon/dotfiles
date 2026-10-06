@@ -9,14 +9,13 @@ files = [
 ]
 
 [include.optional]
-files = []
+files = [ "~/.config/umbriel/noctalia.toml" ]
 
 
 [general]
-autostart = ["noctalia", "zen-beta"]
+autostart = [ "noctalia", "zen-beta" ]
 mod_key = "Super"
 xwayland = true
-xwayland_native_resolution = false
 show_cheatsheet = false
 focus_on_activate = true
 honor_restored_maximize = false

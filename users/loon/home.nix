@@ -110,10 +110,6 @@ in
     colorScheme = "catppuccin-mocha";
   };
   programs.starship.enable = true;
-  # programs.vscode = {
-  #   enable = true;
-  #   package = pkgs.vscode.fhs;
-  # };
   programs.yazi.enable = true;
   programs.yazi.shellWrapperName = "yy";
   programs.zoxide.enable = true;
@@ -135,6 +131,7 @@ in
     extraPortals = [
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-umbriel
     ];
     config = {
       niri = {
@@ -175,9 +172,9 @@ in
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     SDL_VIDEODRIVER = "wayland";
+    XDG_CURRENT_DESKTOP = "Umbriel";
     XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "niri";
-    DISPLAY = ":0";
+    XDG_SESSION_DESKTOP = "Umbriel";
   };
 
   qt.platformTheme.name = "gtk3";

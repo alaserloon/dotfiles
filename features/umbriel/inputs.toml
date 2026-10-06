@@ -1,7 +1,5 @@
 [input]
 middle_click_paste = true
-client_window_drag = true
-window_drag_toggle = "none"
 
 [input.keyboard]
 layout = "us"
@@ -9,20 +7,8 @@ numlock_toggle = true
 
 [input.mouse]
 natural_scroll = false
-left_handed = false
-# accel_profile = "flat"
 sensitivity = 0.0
 scroll_wheel_step = 60
-# scroll_button = "MouseBack"
-# scroll_button_lock = false
-
-[input.tablet]
-enabled = true
-map_to_output = "DP-1"
-map_to_focused_output = false
-map_to_focused_window = false
-left_handed = false
-calibration_matrix = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]
 
 [input.cursor]
 theme = "Bibata-Modern-Ice"

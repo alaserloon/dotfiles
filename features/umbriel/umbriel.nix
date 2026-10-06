@@ -11,7 +11,6 @@
   };
 
   xdg.configFile = {
-    "umbriel/configuration.toml".source = ./configuration.toml;
     "umbriel/outputs.toml".source = ./outputs.toml;
     "umbriel/inputs.toml".source = ./inputs.toml;
     "umbriel/keybinds.toml".source = ./keybinds.toml;

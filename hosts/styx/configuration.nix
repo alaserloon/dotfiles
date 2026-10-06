@@ -72,13 +72,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    displayManager.noctalia-greeter = {
-      enable = true;
-      settings = {
-        session.default = [ "umbriel" ];
-        user.default = "loon";
-      };
-    };
+    displayManager.noctalia-greeter.enable = true;
     power-profiles-daemon.enable = true;
     upower.enable = true;
     flatpak.enable = true;
@@ -121,6 +115,7 @@
     gamescope
     git
     gpu-screen-recorder-gtk
+    grim
     imv
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     just
@@ -135,6 +130,8 @@
     pkgs.thunar-volman
     protonup-qt
     pulseaudio
+    satty
+    slurp
     steam-run
     thunar-volman
     thunar-archive-plugin
@@ -168,15 +165,16 @@
   nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
   environment.variables = {
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "niri";
+    PROTON_ENABLE_WAYLAND = "1";
+    DXVK_HDR = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    SDL_VIDEODRIVER = "wayland";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     GTK_THEME = "Adwaita-dark";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "22";
   };
-
 
   fileSystems."/media-pool" = {
     device = "192.168.50.39:/media-pool";
