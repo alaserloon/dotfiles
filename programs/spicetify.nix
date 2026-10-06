@@ -1,3 +1,4 @@
+# home-manager
 { pkgs, inputs, ... }:
 
 let

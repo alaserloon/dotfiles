@@ -17,7 +17,6 @@
     ../../programs/noctalia/noctalia.nix
     ../../programs/obs.nix
     ../../programs/spicetify.nix
-    ../../programs/thunar.nix
   ];
 
   home.username = "loon";

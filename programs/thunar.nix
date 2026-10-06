@@ -1,15 +1,18 @@
-{ config, pkgs, ... }:
+# nixos
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    thunar
-    thunar-archive-plugin # Archive support (zip, tar, etc)
-    thunar-media-tags-plugin
-    thunar-volman
-    xarchiver # GUI archive manager that Thunar uses for zip operations
-  ];
 
-  # Thunar custom actions for archive operations
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [
+      thunar-archive-plugin # Archive support (zip, tar, etc)
+      thunar-media-tags-plugin
+      thunar-volman
+      xarchiver # GUI archive manager that Thunar uses for zip operations
+    ];
+  };
+
   xdg.configFile."Thunar/uca.xml" = {
     force = true;
     text = ''
@@ -75,11 +78,9 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-    gtk4.theme = null; #config.gtk.theme;
-    # gtk4.extraConfig = {
-    #   gtk-application-prefer-dark-theme = true;
-    # };
+    gtk4.theme = null;
   };
+
 
   qt = {
     enable = true;

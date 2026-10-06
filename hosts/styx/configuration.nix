@@ -1,98 +1,20 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./boot.nix
+    ./desktop.nix
+    ./filesystems.nix
+    ./packages.nix
+    ./services.nix
+    ./settings.nix
+    ../../programs/steam.nix
+    ../../programs/sunshine.nix
+    ../../programs/thunar.nix
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "nfs" ];
 
   networking.hostName = "styx";
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [ 4455 ]; #obs-websocket
-
-  time.timeZone = "America/Chicago";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  hardware = {
-    enableAllFirmware = true;
-    graphics.enable = true;
-    graphics.enable32Bit = true;
-    graphics.extraPackages = with pkgs; [
-      vulkan-loader
-      vulkan-validation-layers
-      vulkan-tools
-    ];
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
-    };
-    xone.enable = true;
-    steam-hardware.enable = true;
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      package = pkgs.bluez;
-    };
-  };
-
-
-  services = {
-    xserver = {
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-    displayManager.noctalia-greeter.enable = true;
-    power-profiles-daemon.enable = true;
-    upower.enable = true;
-    flatpak.enable = true;
-    gvfs.enable = true; # Mount, trash, and other functionalities
-    tumbler.enable = true; # Thumbnail support for images
-    sunshine = {
-      enable = true;
-      autoStart = false; # Will need to start with `sunshine`
-      capSysAdmin = true; # Needed on Wayland
-      openFirewall = true;
-      package = pkgs.sunshine.override {
-        cudaSupport = true;
-        cudaPackages = pkgs.cudaPackages;
-      };
-    };
-  };
-
-  security.rtkit.enable = true;
-
-  virtualisation.docker.enable = true;
 
   users.users.loon = {
     isNormalUser = true;
@@ -100,107 +22,7 @@
     shell = pkgs.bash;
   };
 
-  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
-
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    alacritty
-    bibata-cursors
-    bluez
-    curl
-    ffmpeg
-    fuzzel
-    equibop
-    gamescope
-    git
-    gpu-screen-recorder-gtk
-    grim
-    imv
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    just
-    mako
-    ncdu
-    neovim
-    pkgs._7zip-zstd
-    pkgs.stremio-linux-shell
-    pkgs.thunar
-    pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
-    pkgs.thunar-media-tags-plugin
-    pkgs.thunar-volman
-    protonup-qt
-    pulseaudio
-    satty
-    slurp
-    steam-run
-    thunar-volman
-    thunar-archive-plugin
-    tree
-    vim
-    vulkan-tools
-    wget
-    wl-clipboard
-    xwayland-satellite
-  ];
-
-  programs = {
-    niri.enable = true;
-    umbriel.enable = true;
-    fish.enable = true;
-    xfconf.enable = true;
-    gpu-screen-recorder.enable = true;
-    firefox = {
-      enable = true;
-      package = pkgs.firefox;
-    };
-    steam = {
-      enable = true;
-      package = pkgs.millennium-steam;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-    };
-  };
-
-  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
-
-  environment.variables = {
-    PROTON_ENABLE_WAYLAND = "1";
-    DXVK_HDR = "1";
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    SDL_VIDEODRIVER = "wayland";
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    GTK_THEME = "Adwaita-dark";
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "22";
-  };
-
-  fileSystems."/media-pool" = {
-    device = "192.168.50.39:/media-pool";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" ];
-  };
-
-  fileSystems."/home/loon/backup" = {
-    device = "/dev/sda1";
-    fsType = "ntfs";
-    options = [ "uid=1000" "gid=100" "umask=0077" ];
-  };
-
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Cachix
-  nix.settings.extra-substituters = [ "https://noctalia.cachix.org" ];
-  nix.settings.extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
-  nix.settings.substituters = [
-    "https://nix-community.cachix.org"
-    "https://cache.nixos.org/"
-  ];
-  nix.settings.trusted-public-keys = [
-    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  ];
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "25.11";
 }
