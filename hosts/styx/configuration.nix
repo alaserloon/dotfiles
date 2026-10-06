@@ -10,7 +10,7 @@
     ./settings.nix
     ../../programs/steam.nix
     ../../programs/sunshine.nix
-    ../../programs/thunar.nix
+    ../../programs/thunar/nixos.nix
   ];
 
   networking.hostName = "styx";

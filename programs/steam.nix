@@ -31,6 +31,11 @@
     steam-run
   ];
 
+  environment.variables = {
+    PROTON_ENABLE_WAYLAND = "1";
+    DXVK_HDR = "1";
+  };
+
   nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
 }
