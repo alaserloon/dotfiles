@@ -19,5 +19,4 @@
     ];
   };
 
-  networking.firewall.allowedTCPPorts = [ 4455 ]; #obs-websocket
 }

@@ -15,6 +15,7 @@
 
   networking.hostName = "styx";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 4455 ]; #obs-websocket
 
   users.users.loon = {
     isNormalUser = true;

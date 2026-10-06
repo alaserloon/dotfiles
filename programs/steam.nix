@@ -26,7 +26,7 @@
 
   programs.gamescope.enable = true;
 
-  environment.systemPackage = with pkgs; [
+  environment.systemPackages = with pkgs; [
     protonup-qt
     steam-run
   ];
