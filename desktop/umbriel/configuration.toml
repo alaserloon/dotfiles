@@ -1,0 +1,21 @@
+[include]
+files = [
+"outputs.toml",
+"inputs.toml",
+"keybinds.toml",
+"layout.toml",
+"window-rules.toml",
+"appearance.toml"    
+]
+
+[include.optional]
+files = [ "~/.config/umbriel/noctalia.toml" ]
+
+
+[general]
+autostart = [ "noctalia", "zen-beta" ]
+mod_key = "Super"
+xwayland = true
+show_cheatsheet = false
+focus_on_activate = true
+honor_restored_maximize = false
