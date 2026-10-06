@@ -7,15 +7,15 @@ in
 {
 
   imports = [
-    ../../features/niri.nix
-    ../../features/umbriel/umbriel.nix
-    ../../features/noctalia.nix
-    ../../features/thunar.nix
-    ../../programs/kitty.nix
-    ../../programs/bash.nix
-    ../../programs/fish
-    ../../programs/helix
-    ../../programs/zellij
+    ../../desktopfeatures/niri.nix
+    ../../desktop/umbriel/umbriel.nix
+    ../../desktop/noctalia.nix
+    ../../desktop/thunar.nix
+    ../../shell/kitty.nix
+    ../../shell/bash.nix
+    ../../shell/fish
+    ../../shell/helix
+    ../../shell/zellij
   ];
 
   home.username = "loon";
