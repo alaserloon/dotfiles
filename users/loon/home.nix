@@ -7,7 +7,7 @@ in
 {
 
   imports = [
-    ../../desktopfeatures/niri.nix
+    ../../desktop/niri.nix
     ../../desktop/umbriel/umbriel.nix
     ../../desktop/noctalia.nix
     ../../desktop/thunar.nix
