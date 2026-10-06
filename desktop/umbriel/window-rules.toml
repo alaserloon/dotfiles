@@ -15,17 +15,13 @@ vrr = "always"
 
 [[window_rule]]
 default_position = { x = 12, y=12, anchor = "bottom_right" }
-# match.title = "^notificationtoasts_\\d+_desktop$"
-match.title = "^notificationtoasts_.+_desktop"
+match.title = "^notificationtoasts_\\d+_desktop$"
 default_focused = false
 
 [[window_rule]]
 match.title = "Friends List"
 focus_on_activate = false
 default_scrolling_extent = 0.10
-# default_floating = true
-# default_floating_size_px = { width = 329, height = 1379 }
-# default_position = { x = 10, y = 0, anchor = "right" }
 
 # Dim unfocused windows
 [[window_rule]]
