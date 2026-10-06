@@ -7,14 +7,14 @@
     ./flatpak.nix
     ./xdg.nix
     ./session.nix
-    ../../desktop/niri.nix
-    ../../desktop/umbriel/umbriel.nix
+    ../../desktop/niri
+    ../../desktop/umbriel
     ../../shell/kitty.nix
     ../../shell/bash.nix
     ../../shell/fish
     ../../shell/helix
     ../../shell/zellij
-    ../../programs/noctalia
+    ../../programs/noctalia/noctalia.nix
     ../../programs/obs.nix
     ../../programs/spicetify.nix
     ../../programs/thunar.nix
