@@ -13,7 +13,7 @@ scroll_wheel_step = 60
 [input.cursor]
 theme = "Bibata-Modern-Ice"
 size = 22
-hardware_cursor = true
+hardware_cursor = false
 follows_focus = true
 hide_when_typing = false
 hide_timeout_ms = 0

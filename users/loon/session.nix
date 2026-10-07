@@ -21,5 +21,6 @@
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    WLR_RENDER_DRM_DEVICE = "/dev/dri/by-path/pci-0000:01:00.0-render"; # Umbriel Issue
   };
 }

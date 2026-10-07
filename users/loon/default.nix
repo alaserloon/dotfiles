@@ -17,6 +17,7 @@
     ../../programs/noctalia
     ../../programs/thunar/home.nix
     ../../programs/obs.nix
+    ../../programs/sonora.nix
     ../../programs/spicetify.nix
   ];
 

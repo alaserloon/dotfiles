@@ -8,11 +8,6 @@ match.app_id = "^steam_app_[0-9]+$"
 default_workspace = 4
 default_fullscreen = true
 
-# Enable VRR for game content
-[[window_rule]]
-match.content_type = "game"
-vrr = "always"
-
 [[window_rule]]
 default_position = { x = 12, y=12, anchor = "bottom_right" }
 match.title = "^notificationtoasts_\\d+_desktop$"
