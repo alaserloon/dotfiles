@@ -41,7 +41,7 @@
       };
     };
 
-    sonoro = {
+    sonora = {
       url = "github:sonorahq/sonora";
     };
 
