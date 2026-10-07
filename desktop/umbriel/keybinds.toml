@@ -47,6 +47,7 @@
 "Mod+P" = "spawn:noctalia msg screenshot-region"
 "Mod+Escape" = "spawn:noctalia msg panel-toggle session"
 "Mod+slash" = "cheatsheet-toggle"
+"Print" = "spawn:noctalia msg screenshot-region"
 "Mod+Print" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-save"
 "Mod+Shift+Print" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-toggle"
 

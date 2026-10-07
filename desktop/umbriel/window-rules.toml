@@ -8,11 +8,13 @@ match.app_id = "^steam_app_[0-9]+$"
 default_workspace = 4
 default_fullscreen = true
 
+# Steam Notifications
 [[window_rule]]
-default_position = { x = 12, y=12, anchor = "bottom_right" }
+default_position = { x = 12, y = 12, anchor = "bottom_right" }
 match.title = "^notificationtoasts_\\d+_desktop$"
 default_focused = false
 
+# Steam Friends List
 [[window_rule]]
 match.title = "Friends List"
 focus_on_activate = false
@@ -26,3 +28,9 @@ opacity = 0.85
 [[window_rule]]
 match.is_focused = true
 opacity = 1.0
+
+# Screen Share Picker
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 1200, height = 924 }
