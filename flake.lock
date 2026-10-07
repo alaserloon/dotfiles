@@ -206,7 +206,7 @@
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
-        "sonoro": "sonoro",
+        "sonora": "sonora",
         "spicetify-nix": "spicetify-nix",
         "umbriel": "umbriel",
         "zen-browser": "zen-browser"
@@ -215,7 +215,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "sonoro",
+          "sonora",
           "nixpkgs"
         ]
       },
@@ -233,7 +233,7 @@
         "type": "github"
       }
     },
-    "sonoro": {
+    "sonora": {
       "inputs": {
         "nixpkgs": "nixpkgs_3",
         "rust-overlay": "rust-overlay"
