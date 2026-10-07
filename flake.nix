@@ -62,6 +62,7 @@
     , umbriel
     , millennium
     , zen-browser
+    , sonora
     , spicetify-nix
     }:
     {
