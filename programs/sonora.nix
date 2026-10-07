@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       provider = "spotify";
-      appearance.theme = "dark";
+      appearance.theme = "noctalia";
     };
   };
 }
