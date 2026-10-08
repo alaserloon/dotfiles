@@ -20,6 +20,18 @@ match.title = "Friends List"
 focus_on_activate = false
 default_scrolling_extent = 0.10
 
+# Steam Settings
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+match.title = "^([Ss]team)$"
+default_floating = false
+
+[[window_rule]]
+match.app_id = "^([Ss]team)$"
+match.title = "^(?![Ss]team$)"
+default_floating = true
+default_floating_size_px = { width = 1200, height = 900 }
+
 # Dim unfocused windows
 [[window_rule]]
 match.is_focused = false
@@ -34,3 +46,14 @@ opacity = 1.0
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
 default_floating_size_px = { width = 1200, height = 924 }
+
+# File Picker
+[[window_rule]]
+match.title = "Open Files"
+default_floating = true
+default_floating_size_px = { width = 300, height = 900 }
+
+# kitty
+ [[window_rule]]
+match.app_id = "^kitty$"
+default_scrolling_extent = 0.4
