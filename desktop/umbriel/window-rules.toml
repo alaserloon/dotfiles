@@ -2,7 +2,7 @@
 [[window_rule]]
 blur = true
 
-# Place a game on workspace 4
+# Steam Games
 [[window_rule]]
 match.app_id = "^steam_app_[0-9]+$"
 default_workspace = 4
@@ -19,6 +19,8 @@ default_focused = false
 match.app_id = "^([Ss]team)$"
 match.title = "^([Ss]team)$"
 default_floating = false
+default_workspace = 2
+focus_on_activate = false
 
 [[window_rule]]
 match.app_id = "^([Ss]team)$"
@@ -31,6 +33,12 @@ default_floating_size_px = { width = 1200, height = 900 }
 match.title = "Friends List"
 focus_on_activate = false
 default_scrolling_extent = 0.10
+
+# Equibop
+[[window_rule]]
+match.app_id = "equibop"
+default_workspace = 3
+focus_on_activate = false
 
 # Dim unfocused windows
 [[window_rule]]
@@ -49,9 +57,9 @@ default_floating_size_px = { width = 1200, height = 924 }
 
 # File Picker
 [[window_rule]]
-match.title = "Open Files|Destination Directory"
+match.title = "Open Files|Open Source|Destination Directory"
 default_floating = true
-default_floating_size_px = { width = 300, height = 900 }
+default_floating_size_px = { width = 1200, height = 900 }
 
 # kitty
  [[window_rule]]

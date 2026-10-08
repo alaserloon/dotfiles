@@ -13,7 +13,7 @@ files = [ "~/.config/umbriel/noctalia.toml" ]
 
 
 [general]
-autostart = [ "noctalia", "zen-beta" ]
+autostart = [ "noctalia", "zen-beta", "steam", "equipbop" ]
 mod_key = "Super"
 xwayland = true
 show_cheatsheet = false
