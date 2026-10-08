@@ -49,7 +49,7 @@ default_floating_size_px = { width = 1200, height = 924 }
 
 # File Picker
 [[window_rule]]
-match.title = "Open Files"
+match.title = "Open Files|Destination Directory"
 default_floating = true
 default_floating_size_px = { width = 300, height = 900 }
 
@@ -57,3 +57,8 @@ default_floating_size_px = { width = 300, height = 900 }
  [[window_rule]]
 match.app_id = "^kitty$"
 default_scrolling_extent = 0.4
+
+# Handbrake
+[[window_rule]]
+match.app_id = "^fr.handbrake.ghb$"
+default_scrolling_extent = 0.5
