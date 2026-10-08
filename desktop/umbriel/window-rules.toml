@@ -14,12 +14,6 @@ default_position = { x = 12, y = 12, anchor = "bottom_right" }
 match.title = "^notificationtoasts_\\d+_desktop$"
 default_focused = false
 
-# Steam Friends List
-[[window_rule]]
-match.title = "Friends List"
-focus_on_activate = false
-default_scrolling_extent = 0.10
-
 # Steam Settings
 [[window_rule]]
 match.app_id = "^([Ss]team)$"
@@ -28,9 +22,15 @@ default_floating = false
 
 [[window_rule]]
 match.app_id = "^([Ss]team)$"
-match.title = "^(?![Ss]team$)"
+match.title = "^(?![Ss]team$|Friends List$)"
 default_floating = true
 default_floating_size_px = { width = 1200, height = 900 }
+
+# Steam Friends List
+[[window_rule]]
+match.title = "Friends List"
+focus_on_activate = false
+default_scrolling_extent = 0.10
 
 # Dim unfocused windows
 [[window_rule]]
