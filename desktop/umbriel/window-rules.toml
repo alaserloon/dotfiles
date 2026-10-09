@@ -27,7 +27,6 @@ match.app_id = "^([Ss]team)$"
 match.title = "^(?![Ss]team$|Friends List$)"
 default_floating = true
 default_floating_size_px = { width = 1200, height = 900 }
-focus_on_active = false
 
 # Steam Friends List
 [[window_rule]]
