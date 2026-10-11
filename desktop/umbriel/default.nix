@@ -19,5 +19,6 @@
     "umbriel/window-rules.toml" = { source = ./window-rules.toml; force = true; };
     "umbriel/animations.toml" = { source = ./animations.toml; force = true; };
     "umbriel/shaders/beam/effect.toml" = { source = ./shaders/beam/effect.toml; force = true; };
+    "umbriel/shaders/beam/beam.glsl" = { source = ./shaders/beam/beam.glsl; force = true; };
   };
 }
