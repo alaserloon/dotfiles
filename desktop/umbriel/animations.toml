@@ -1,0 +1,12 @@
+[animation]
+enabled = true
+
+[animation.windows_in]
+effect = "beam"
+duration_ms = 750
+curve = "linear"
+
+[animation.windows_out]
+effect = "beam"
+duration_ms = 750
+curve = "linear"
