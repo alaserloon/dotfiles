@@ -17,5 +17,7 @@
     "umbriel/layout.toml" = { source = ./layout.toml; force = true; };
     "umbriel/appearance.toml" = { source = ./appearance.toml; force = true; };
     "umbriel/window-rules.toml" = { source = ./window-rules.toml; force = true; };
+    "umbriel/animations.toml" = { source = ./animations.toml; force = true; };
+    "umbriel/shaders/beam/effect.toml" = { source = ./shaders/beam/effect.toml; force = true; };
   };
 }
