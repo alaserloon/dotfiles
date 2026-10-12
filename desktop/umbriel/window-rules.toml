@@ -8,6 +8,11 @@ match.app_id = "^steam_app_[0-9]+$"
 default_workspace = 4
 default_fullscreen = true
 
+[[window_rule]]
+match.xdg_tag = "proton-game"
+default_workspace = 4
+default_fullscreen = true
+
 # Steam Notifications
 [[window_rule]]
 default_position = { x = 12, y = 12, anchor = "bottom_right" }

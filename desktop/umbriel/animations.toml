@@ -10,3 +10,6 @@ curve = "linear"
 effect = "beam"
 duration_ms = 750
 curve = "linear"
+
+[effects]
+border = "accent-pulse"
