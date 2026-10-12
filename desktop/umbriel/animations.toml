@@ -12,5 +12,5 @@ duration_ms = 750
 curve = "linear"
 
 [effects]
-# border = "accent-pulse"
-border = "dual-orbit"
+border = "accent-pulse"
+# border = "dual-orbit"
