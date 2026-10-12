@@ -22,5 +22,7 @@
     "umbriel/shaders/beam/beam.glsl" = { source = ./shaders/beam/beam.glsl; force = true; };
     "umbriel/shaders/accent-pulse/effect.toml" = { source = ./shaders/accent-pulse/effect.toml; force = true; };
     "umbriel/shaders/accent-pulse/shader.glsl" = { source = ./shaders/accent-pulse/shader.glsl; force = true; };
+    "umbriel/shaders/dual-orbit/effect.toml" = { source = ./shaders/dual-orbit/effect.toml; force = true; };
+    "umbriel/shaders/dual-orbit/shader.glsl" = { source = ./shaders/dual-orbit/shader.glsl; force = true; };
   };
 }
