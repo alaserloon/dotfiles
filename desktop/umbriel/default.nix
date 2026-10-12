@@ -20,6 +20,8 @@
     "umbriel/animations.toml" = { source = ./animations.toml; force = true; };
     "umbriel/shaders/beam/effect.toml" = { source = ./shaders/beam/effect.toml; force = true; };
     "umbriel/shaders/beam/beam.glsl" = { source = ./shaders/beam/beam.glsl; force = true; };
+    "umbriel/shaders/wobbly-lifecycle/effect.toml" = { source = ./shaders/wobbly-lifecycle/effect.toml; force = true; };
+    "umbriel/shaders/wobbly-lifecycle/shader.glsl" = { source = ./shaders/wobbly-lifecycle/shader.glsl; force = true; };
     "umbriel/shaders/accent-pulse/effect.toml" = { source = ./shaders/accent-pulse/effect.toml; force = true; };
     "umbriel/shaders/accent-pulse/shader.glsl" = { source = ./shaders/accent-pulse/shader.glsl; force = true; };
     "umbriel/shaders/dual-orbit/effect.toml" = { source = ./shaders/dual-orbit/effect.toml; force = true; };

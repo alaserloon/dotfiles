@@ -1,14 +1,26 @@
 [animation]
 enabled = true
 
+# [animation.windows_in]
+# effect = "beam"
+# duration_ms = 750
+# curve = "linear"
+
+# [animation.windows_out]
+# effect = "beam"
+# duration_ms = 750
+# curve = "linear"
+
 [animation.windows_in]
-effect = "beam"
-duration_ms = 750
+enabled = true
+effect = "wobbly-lifecycle"
+duration_ms = 620
 curve = "linear"
 
 [animation.windows_out]
-effect = "beam"
-duration_ms = 750
+enabled = true
+effect = "wobbly-lifecycle"
+duration_ms = 460
 curve = "linear"
 
 [effects]
