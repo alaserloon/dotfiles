@@ -1,28 +1,22 @@
 [animation]
 enabled = true
 
-# [animation.windows_in]
-# effect = "beam"
-# duration_ms = 750
-# curve = "linear"
-
-# [animation.windows_out]
-# effect = "beam"
-# duration_ms = 750
-# curve = "linear"
-
 [animation.windows_in]
-enabled = true
-effect = "wobbly-lifecycle"
-duration_ms = 620
+effect = "beam"
+duration_ms = 750
 curve = "linear"
 
 [animation.windows_out]
-enabled = true
-effect = "wobbly-lifecycle"
-duration_ms = 460
+effect = "beam"
+duration_ms = 750
 curve = "linear"
 
 [effects]
 border = "accent-pulse"
-# border = "dual-orbit"
+
+[animation.workspaces]
+enabled = true
+style = "reveal"
+effect = "workspace-dust-cloud"
+duration_ms = 1400
+curve = "linear"

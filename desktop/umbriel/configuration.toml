@@ -8,9 +8,8 @@ files = [
 "appearance.toml",    
 "animations.toml",
 "shaders/beam/effect.toml",
-"shaders/wobbly-lifecycle/effect.toml",
-"shaders/accent-pulse/effect.toml"
-# "shaders/dual-orbit/effect.toml"
+"shaders/accent-pulse/effect.toml",
+"shaders/workspace-dust-cloud/effect.toml"
 ]
 
 [include.optional]
