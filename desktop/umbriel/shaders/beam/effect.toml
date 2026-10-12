@@ -1,4 +1,4 @@
 [effects.preset.beam]
 kind = "animation"
-shader = "beam.glsl"
+shader = "shader.glsl"
 palette = true

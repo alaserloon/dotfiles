@@ -1,3 +1,0 @@
-[effects.preset."workspace-dust-cloud"]
-kind = "animation"
-shader = "shader.glsl"

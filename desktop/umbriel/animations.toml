@@ -13,10 +13,3 @@ curve = "linear"
 
 [effects]
 border = "accent-pulse"
-
-[animation.workspaces]
-enabled = true
-style = "reveal"
-effect = "workspace-dust-cloud"
-duration_ms = 1400
-curve = "linear"

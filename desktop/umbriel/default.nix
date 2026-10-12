@@ -22,7 +22,5 @@
     "umbriel/shaders/beam/shader.glsl" = { source = ./shaders/beam/shader.glsl; force = true; };
     "umbriel/shaders/accent-pulse/effect.toml" = { source = ./shaders/accent-pulse/effect.toml; force = true; };
     "umbriel/shaders/accent-pulse/shader.glsl" = { source = ./shaders/accent-pulse/shader.glsl; force = true; };
-    "umbriel/shaders/workspace-dust-cloud/effect.toml" = { source = ./shaders/workspace-dust-cloud/effect.toml; force = true; };
-    "umbriel/shaders/workspace-dust-cloud/shader.glsl" = { source = ./shaders/workspace-dust-cloud/shader.glsl; force = true; };
   };
 }
