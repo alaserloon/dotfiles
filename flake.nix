@@ -70,6 +70,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/styx/configuration.nix
+          umbriel.homeModules.default
           home-manager.nixosModules.home-manager
           noctalia.nixosModules.default
           {

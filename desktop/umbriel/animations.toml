@@ -11,12 +11,12 @@ effect = "beam"
 duration_ms = 750
 curve = "linear"
 
-# [animation.workspaces]
-# enabled = true
-# style = "reveal"
-# effect = "workspace-noctalia-wave"
-# duration_ms = 1400
-# curve = "linear"
+[animation.workspaces]
+enabled = true
+style = "reveal"
+effect = "workspace-noctalia-wave"
+duration_ms = 1400
+curve = "linear"
 
 [effects]
 border = "accent-pulse"
