@@ -23,4 +23,6 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
+  environment.pathsToLink = [ "/share/umbriel" ];
+
 }
