@@ -9,7 +9,7 @@ files = [
 "animations.toml",
 "shaders/beam/effect.toml",
 "shaders/accent-pulse/effect.toml",
-"shaders/workspace-noctalia-wave/effect.toml"
+# "shaders/workspace-noctalia-wave/effect.toml"
 ]
 
 [include.optional]

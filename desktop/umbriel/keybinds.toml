@@ -7,15 +7,15 @@
 "Mod+Shift+WheelDown" = { action = "window-focus-next", cooldown_ms = 150 }
 "Mod+Ctrl+WheelDown" = { action = "output-focus-right", cooldown_ms = 150 }
 "Mod+Ctrl+WheelUp" = { action = "output-focus-left", cooldown_ms = 150 }
-"Mod+1" = "window-focus:1"
-"Mod+2" = "window-focus:2"
-"Mod+3" = "window-focus:3"
-"Mod+4" = "window-focus:4"
-"Mod+5" = "window-focus:5"
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
 "Mod+Left" = "window-focus-left"
 "Mod+Right" = "window-focus-right"
-"Mod+Up" = "window-focus-up"
-"Mod+Down" = "window-focus-down"
+"Mod+Up" = "workspace-previous"
+"Mod+Down" = "workspace-next"
 
 # Move & Size
 "Mod+Ctrl+Shift+Down" = "column-move-to-output-down" 
