@@ -32,6 +32,9 @@
 "Mod+v" = "window-toggle-floating" 
 "Mod+f" = "window-toggle-fullscreen"
 
+# Umbriel Animations
+"Mod+C" = "effect-cursor-toggle"
+
 # Apps
 "Mod+Return" = "spawn:kitty"
 "Mod+W" = "spawn:zen-beta"
