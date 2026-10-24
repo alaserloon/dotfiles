@@ -10,6 +10,7 @@
       vulkan-tools
     ];
     xone.enable = true;
+    xpad-noone.enable = false; # nixpkgs packaging breaks the modules build on 6.18.57
     steam-hardware.enable = true;
   };
 

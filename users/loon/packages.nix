@@ -30,6 +30,7 @@
     retroarch-full
     ripgrep
     starship
+    stremio-linux-shell
     unzip
     tigervnc
     yazi

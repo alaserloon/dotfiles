@@ -11,7 +11,6 @@
     curl
     ffmpeg
     fuzzel
-    equibop
     git
     gpu-screen-recorder-gtk
     grim
@@ -22,7 +21,6 @@
     ncdu
     neovim
     pkgs._7zip-zstd
-    pkgs.stremio-linux-shell
     pulseaudio
     satty
     slurp

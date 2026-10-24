@@ -2,6 +2,7 @@
 
 {
   programs.bat.enable = true;
+  programs.equibop.enable = true;
   programs.eza.enable = true;
   programs.fd.enable = true;
   programs.fzf.enable = true;
