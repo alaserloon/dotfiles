@@ -25,8 +25,7 @@
     };
 
     umbriel = {
-      url = "github:noctalia-dev/umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/umbriel/cachix";
     };
 
     millennium = {
