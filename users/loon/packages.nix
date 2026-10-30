@@ -6,7 +6,6 @@
     bash
     bat
     btop
-    deadlock-mod-manager
     eza
     fastfetch
     fd
