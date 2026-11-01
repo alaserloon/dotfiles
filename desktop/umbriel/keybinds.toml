@@ -7,11 +7,11 @@
 "Mod+Shift+WheelDown" = { action = "window-focus-next", cooldown_ms = 150 }
 "Mod+Ctrl+WheelDown" = { action = "output-focus-right", cooldown_ms = 150 }
 "Mod+Ctrl+WheelUp" = { action = "output-focus-left", cooldown_ms = 150 }
-"Mod+1" = "workspace-switch:1"
-"Mod+2" = "workspace-switch:2"
-"Mod+3" = "workspace-switch:3"
-"Mod+4" = "workspace-switch:4"
-"Mod+5" = "workspace-switch:5"
+"Mod+1" = "workspace-switch 1"
+"Mod+2" = "workspace-switch 2"
+"Mod+3" = "workspace-switch 3"
+"Mod+4" = "workspace-switch 4"
+"Mod+5" = "workspace-switch 5"
 "Mod+Left" = "window-focus-left"
 "Mod+Right" = "window-focus-right"
 "Mod+Up" = "workspace-previous"
@@ -24,11 +24,11 @@
 "Mod+Ctrl+Shift+Up" = "column-move-to-output-up"
 "Mod+Ctrl+Shift+WheelDown" = { action = "column-move-right", cooldown_ms=150 } 
 "Mod+Ctrl+Shift+WheelUp" = { action = "column-move-left", cooldown_ms=150 } 
-"Mod+shift+1" = "window-move-to-workspace:1"
-"Mod+shift+2" = "window-move-to-workspace:2"
-"Mod+shift+3" = "window-move-to-workspace:3"
-"Mod+shift+4" = "window-move-to-workspace:4"
-"Mod+shift+5" = "window-move-to-workspace:5"
+"Mod+shift+1" = "window-move-to-workspace 1"
+"Mod+shift+2" = "window-move-to-workspace 2"
+"Mod+shift+3" = "window-move-to-workspace 3"
+"Mod+shift+4" = "window-move-to-workspace 4"
+"Mod+shift+5" = "window-move-to-workspace 5"
 "Mod+v" = "window-toggle-floating" 
 "Mod+f" = "window-toggle-fullscreen"
 
@@ -36,28 +36,28 @@
 "Mod+C" = "effect-cursor-toggle"
 
 # Apps
-"Mod+Return" = "spawn:kitty"
-"Mod+W" = "spawn:zen-beta"
-"Mod+E" = "spawn:thunar"
+"Mod+Return" = "spawn kitty"
+"Mod+W" = "spawn zen-beta"
+"Mod+E" = "spawn thunar"
 
 
 # Noctalia Shell Integration
-"Mod" = "spawn:noctalia msg panel-toggle launcher"
+"Mod" = "spawn noctalia msg panel-toggle launcher"
 "Mod+Q" = "window-close"
-"Mod+ctrl+V" = "spawn:noctalia msg panel-toggle clipboard"
-"Mod+L" = "spawn:noctalia msg session lock"
-"Mod+Shift+W" = "spawn:noctalia msg panel-toggle wallpaper"
-"Mod+P" = "spawn:noctalia msg screenshot-region"
-"Mod+Escape" = "spawn:noctalia msg panel-toggle session"
+"Mod+ctrl+V" = "spawn noctalia msg panel-toggle clipboard"
+"Mod+L" = "spawn noctalia msg session lock"
+"Mod+Shift+W" = "spawn noctalia msg panel-toggle wallpaper"
+"Mod+P" = "spawn noctalia msg screenshot-region"
+"Mod+Escape" = "spawn noctalia msg panel-toggle session"
 "Mod+slash" = "cheatsheet-toggle"
-"Print" = "spawn:noctalia msg screenshot-region"
-"Mod+Print" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-save"
-"Mod+Shift+Print" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-toggle"
+"Print" = "spawn noctalia msg screenshot-region"
+"Mod+Print" = "spawn noctalia msg plugin noctalia/screen_recorderservice all replay-save"
+"Mod+Shift+Print" = "spawn noctalia msg plugin noctalia/screen_recorderservice all replay-toggle"
 
 # Media Keys
-"XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-"XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-"XF86AudioMute" = "spawn:noctalia msg volume-mute"
-"XF86AudioPlay" = "spawn:noctalia msg media toggle"
-"XF86AudioNext" = "spawn:noctalia msg media next"
-"XF86AudioPrev" = "spawn:noctalia msg media previous"
+"XF86AudioRaiseVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute" = "spawn noctalia msg volume-mute"
+"XF86AudioPlay" = "spawn noctalia msg media toggle"
+"XF86AudioNext" = "spawn noctalia msg media next"
+"XF86AudioPrev" = "spawn noctalia msg media previous"
