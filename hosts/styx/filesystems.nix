@@ -1,15 +1,15 @@
 { ... }:
 
 {
-  fileSystems."/media-pool" = {
-    device = "192.168.50.39:/media-pool";
+  fileSystems."/fshore" = {
+    device = "192.168.50.39:/fshore";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" ];
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "nofail" "_netdev" ];
   };
 
   fileSystems."/home/loon/backup" = {
-    device = "/dev/disk/by-id/ata-Samsung_SSD_840_Series_S14JNEACB10526N";
+    device = "/dev/sda1";
     fsType = "ntfs";
-    options = [ "uid=1000" "gid=100" "umask=0077" ];
+    options = [ "uid=1000" "gid=100" "umask=0077" "nofail" ];
   };
 }

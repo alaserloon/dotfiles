@@ -43,18 +43,18 @@ if status is-interactive
     alias lls='ls'
 
     # media server aliases
-    alias abooks="cd /media-pool/audiobooks"
-    alias amv="cd /media-pool/anime-movies"
-    alias anime-movies="cd /media-pool/anime-movies/"
-    alias anime="cd /media-pool/anime/"
-    alias audiobooks="cd /media-pool/audiobooks"
-    alias books="cd /media-pool/books"
+    alias abooks="cd /fshore/audiobooks"
+    alias amv="cd /fshore/anime-movies"
+    alias anime-movies="cd /fshore/anime-movies/"
+    alias anime="cd /fshore/anime/"
+    alias audiobooks="cd /fshore/audiobooks"
+    alias books="cd /fshore/books"
     alias cl="/home/loon/bin/cleanup.sh"
     alias cla="tv; cl; anime; cl; cd ~"
-    alias media="cd /media-pool"
-    alias movies="cd /media-pool/movies/"
-    alias tv="cd /media-pool/tv-series/"
-    alias wtf="ssh -t troy@osman.wtf; cd /media-pool; bash --login"
+    alias media="cd /fshore"
+    alias movies="cd /fshore/movies/"
+    alias tv="cd /fshore/tv-series/"
+    alias wtf="ssh -t troy@osman.wtf; cd /fshore; bash --login"
     alias wtfcl="tv; cl; anime; cl; cd ~"
 
     # nix shortcuts
