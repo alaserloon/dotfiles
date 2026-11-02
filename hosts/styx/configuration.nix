@@ -11,6 +11,7 @@
     ../../programs/steam.nix
     ../../programs/sunshine.nix
     ../../programs/thunar/nixos.nix
+    ./zfs.nix
   ];
 
   networking.hostName = "styx";

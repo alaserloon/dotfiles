@@ -8,7 +8,7 @@
   };
 
   fileSystems."/home/loon/backup" = {
-    device = "/dev/sda1";
+    device = "/dev/disk/by-id/ata-Samsung_SSD_840_Series_S14JNEACB10526N";
     fsType = "ntfs";
     options = [ "uid=1000" "gid=100" "umask=0077" ];
   };

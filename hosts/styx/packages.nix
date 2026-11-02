@@ -24,6 +24,7 @@
     pulseaudio
     satty
     slurp
+    tmux
     tree
     vim
     wget
