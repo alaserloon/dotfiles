@@ -8,6 +8,7 @@
     ./packages.nix
     ./services.nix
     ./settings.nix
+    ../../programs/appimage.nix
     ../../programs/steam.nix
     ../../programs/sunshine.nix
     ../../programs/thunar/nixos.nix

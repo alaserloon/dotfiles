@@ -21,6 +21,8 @@
     ncdu
     neovim
     pkgs._7zip-zstd
+    pkgs.appimage-run
+    pkgs.gearlever
     pulseaudio
     satty
     slurp
