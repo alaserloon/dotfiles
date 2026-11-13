@@ -14,6 +14,7 @@
     fzf
     gh
     git
+    google-chrome
     jq
     kdePackages.kate
     kitty
