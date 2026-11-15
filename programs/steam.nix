@@ -16,7 +16,7 @@
 
   programs.steam = {
     enable = true;
-    package = pkgs.millennium-steam;
+    # package = pkgs.millennium-steam;
     extraCompatPackages = [
       pkgs.proton-ge-bin
     ];
@@ -37,6 +37,6 @@
     DXVK_HDR = "1";
   };
 
-  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+  # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
 }

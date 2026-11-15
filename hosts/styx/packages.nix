@@ -22,7 +22,7 @@
     neovim
     pkgs._7zip-zstd
     pkgs.appimage-run
-    pkgs.gearlever
+    # pkgs.gearlever
     pulseaudio
     satty
     slurp

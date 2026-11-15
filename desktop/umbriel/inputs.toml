@@ -19,5 +19,5 @@ hide_when_typing = false
 hide_timeout_ms = 0
 
 [input.focus]
-follows_mouse = true
+follows_mouse = "sloppy"
 follows_mouse_max_scroll = 0.9
