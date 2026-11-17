@@ -15,6 +15,7 @@
     ../../shell/helix
     ../../shell/zellij
     ../../programs/noctalia
+    ../../programs/luciole/luciole.nix
     ../../programs/thunar/home.nix
     ../../programs/obs.nix
     ../../programs/sonora.nix

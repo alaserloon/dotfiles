@@ -28,6 +28,11 @@
       url = "github:noctalia-dev/umbriel/cachix";
     };
 
+    luciole = {
+      url = "github:noctalia-dev/luciole";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     millennium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     };
@@ -59,6 +64,7 @@
     , noctalia
     , noctalia-greeter
     , umbriel
+    , luciole
     , millennium
     , zen-browser
     , sonora
@@ -79,6 +85,7 @@
             home-manager.sharedModules = [
               niri-nix.homeModules.default
               spicetify-nix.homeManagerModules.default
+              luciole.homeModules.default
             ];
           }
         ];

@@ -1,0 +1,17 @@
+schema_version = 1
+
+[browser]
+view_mode = "list"
+show_hidden = true
+show_preview = true
+preview_width = 320
+activation_mode = "double_click"
+typing_mode = "search"
+switch_to_new_tab = true
+confirm_permanent_deletion = true
+restore_last_window = false
+compact_menus = true
+background_opacity = 1.0
+corner_radius_scale = 1.0
+sort_by = "modified"
+directories_first = true

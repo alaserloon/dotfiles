@@ -58,7 +58,7 @@
   };
   "Mod+e" = {
     _props.hotkey-overlay-title = "Open File Browser";
-    spawn = "thunar";
+    spawn = "luciole";
   };
   "Mod+l" = {
     _props.hotkey-overlay-title = "Lock screen";

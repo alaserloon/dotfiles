@@ -1,7 +1,8 @@
-[output.DP-4]
+[output."Dell Inc. AW3423DWF J7FD2S3"]
 mode = "3440x1440@164.900"
 position = [0, 0]
 scale = 1
+hdr = "auto"
 workspaces = "dynamic"
 min_workspaces = 3
 

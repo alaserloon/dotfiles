@@ -25,6 +25,7 @@
       "application/pdf" = [ "zen-beta-desktop" ];
     };
     defaultApplications = {
+      "inode/directory" = [ "dev.noctalia.luciole.desktop" ];
       "application/pdf" = [ "zen-beta.desktop" ];
       "text/html" = [ "zen-beta.desktop" ];
       "x-scheme-handler/http" = [ "zen-beta.desktop" ];

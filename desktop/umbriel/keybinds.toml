@@ -38,7 +38,7 @@
 # Apps
 "Mod+Return" = "spawn kitty"
 "Mod+W" = "spawn zen-beta"
-"Mod+E" = "spawn thunar"
+"Mod+E" = "spawn luciole"
 
 
 # Noctalia Shell Integration
